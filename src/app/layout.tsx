@@ -47,6 +47,14 @@ export const metadata: Metadata = {
     description:
       "30 years of trusted bulk chemical distribution from Jodia Bazar, Karachi. 80+ industrial chemicals serving 7 major industries across Pakistan.",
   },
+  icons: {
+    icon: [
+      { url: "/ame-logo.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: "/ame-logo.png",
+    apple: "/ame-logo.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
