@@ -14,12 +14,20 @@ export async function POST(request: Request) {
       );
     }
 
-    // Configure the SMTP transporter
+    const senderEmail = process.env.EMAIL_FROM || process.env.EMAIL_USER;
+    const recipientEmail = process.env.EMAIL_TO || senderEmail;
+    const appPassword = process.env.EMAIL_APP_PASSWORD || process.env.EMAIL_PASS;
+
+    if (!senderEmail || !appPassword || !recipientEmail) {
+      console.warn("Quote API warning: EMAIL_FROM, EMAIL_TO, or EMAIL_APP_PASSWORD is missing in environment variables.");
+    }
+
+    // Configure the SMTP transporter using EMAIL_FROM and EMAIL_APP_PASSWORD
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, // e.g., 'almobeenenterprise@gmail.com'
-        pass: process.env.EMAIL_APP_PASSWORD, // 16-digit App Password
+        user: senderEmail,
+        pass: appPassword,
       },
     });
 
@@ -45,16 +53,16 @@ export async function POST(request: Request) {
       </div>
     `;
 
-    // Send the email
+    // Send the email from EMAIL_FROM to EMAIL_TO
     await transporter.sendMail({
-      from: `"Al Mobeen Website" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER, // Sending to yourself
+      from: `"Al Mobeen Website" <${senderEmail}>`,
+      to: recipientEmail,
       subject: `New Bulk Quote Request from ${name} (${company || "Individual"})`,
       replyTo: email || undefined,
       html: htmlContent,
     });
 
-    console.log(`Quote request emailed successfully for: ${name}`);
+    console.log(`Quote request emailed successfully from ${senderEmail} to ${recipientEmail} for: ${name}`);
 
     return NextResponse.json({
       success: true,
