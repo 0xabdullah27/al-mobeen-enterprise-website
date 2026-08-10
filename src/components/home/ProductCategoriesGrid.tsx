@@ -75,11 +75,11 @@ export default function ProductCategoriesGrid() {
                     <CategoryIcon category={cat.slug} size={32} className="text-[var(--color-primary)] group-hover:text-[var(--color-accent)] transition-colors" />
                   </div>
 
-                  <h3 style={{ color: "#0d1b2a" }} className="text-xl font-extrabold mb-3 group-hover:text-[var(--color-accent)] transition-colors">
+                  <h3 className="text-xl font-extrabold mb-3 text-[var(--color-ink)] group-hover:text-[var(--color-accent)] transition-colors">
                     {cat.name}
                   </h3>
 
-                  <p style={{ color: "#283747" }} className="text-sm leading-relaxed mb-8 line-clamp-3 font-medium">
+                  <p className="text-sm leading-relaxed mb-8 line-clamp-3 font-medium text-[var(--color-ink)]/85">
                     {cat.description}
                   </p>
                 </div>

@@ -84,6 +84,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             }),
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('ame-theme')||'system';var d=t==='dark'||(t==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})();`,
+          }}
+        />
       </head>
       <body className="min-h-screen flex flex-col bg-[var(--color-base)] text-[var(--color-ink)] transition-colors duration-300 relative">
         <SmoothScrollProvider>

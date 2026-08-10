@@ -43,8 +43,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              style={{ color: "#0d1b2a" }}
-              className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]"
+              className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1] text-[var(--color-ink)]"
             >
               Bulk Chemical Supply from Pakistan&apos;s Trading Hub
             </motion.h1>
@@ -54,8 +53,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              style={{ color: "#1b263b" }}
-              className="text-base md:text-lg font-bold leading-relaxed mb-8 max-w-xl"
+              className="text-base md:text-lg font-extrabold leading-relaxed mb-8 max-w-xl text-[var(--color-ink)]/90"
             >
               Al Mobeen Enterprise sources high-grade industrial solvents, plasticizers, pigments, resins, and acids directly from established importers and tier-1 dealers across Pakistan.
             </motion.p>
@@ -91,15 +89,15 @@ export default function HeroSection() {
             >
               <div>
                 <p className="text-2xl md:text-3xl font-black text-[var(--color-primary)] font-tabular">30 Years</p>
-                <p style={{ color: "#1b263b" }} className="text-xs font-bold">In Jodia Bazar</p>
+                <p className="text-xs font-extrabold text-[var(--color-ink)]/90">In Jodia Bazar</p>
               </div>
               <div>
                 <p className="text-2xl md:text-3xl font-black text-[var(--color-primary)] font-tabular">80+ Items</p>
-                <p style={{ color: "#1b263b" }} className="text-xs font-bold">Ready Sourcing</p>
+                <p className="text-xs font-extrabold text-[var(--color-ink)]/90">Ready Sourcing</p>
               </div>
               <div>
                 <p className="text-2xl md:text-3xl font-black text-[var(--color-primary)] font-tabular">7 Sectors</p>
-                <p style={{ color: "#1b263b" }} className="text-xs font-bold">Nationwide Focus</p>
+                <p className="text-xs font-extrabold text-[var(--color-ink)]/90">Nationwide Focus</p>
               </div>
             </motion.div>
           </div>

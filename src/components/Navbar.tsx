@@ -13,7 +13,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { count } = useQuote();
   const { t, lang, setLang } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -289,17 +289,25 @@ export default function Navbar() {
                     <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-neutral)] block mb-2">
                       Appearance Theme
                     </label>
-                    <button
-                      onClick={toggleTheme}
-                      className="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-sm font-bold text-[var(--color-ink)]"
-                    >
-                      <span className="flex items-center gap-2">
-                        {theme === "light" ? "☀️ Light Theme" : "🌙 Dark Theme"}
-                      </span>
-                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-[var(--color-surface)] border border-[var(--color-border)]">
-                        Toggle
-                      </span>
-                    </button>
+                    <div className="grid grid-cols-3 gap-1.5 bg-[var(--color-base)] p-1 rounded-xl border border-[var(--color-border)] text-xs font-bold text-center">
+                      {[
+                        { id: "light", label: "☀️ Light" },
+                        { id: "dark", label: "🌙 Dark" },
+                        { id: "system", label: "💻 System" },
+                      ].map((item) => (
+                        <button
+                          key={item.id}
+                          onClick={() => setTheme(item.id as "light" | "dark" | "system")}
+                          className={`py-2 rounded-lg transition-all ${
+                            theme === item.id
+                              ? "bg-[var(--color-primary)] text-inverse-ink shadow-sm"
+                              : "text-[var(--color-neutral)] hover:text-[var(--color-ink)]"
+                          }`}
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

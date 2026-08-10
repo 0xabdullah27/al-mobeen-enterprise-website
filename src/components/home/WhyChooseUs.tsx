@@ -59,48 +59,51 @@ export default function WhyChooseUs() {
     <section className="section-padding bg-[var(--color-surface)] relative overflow-hidden rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 z-[60] shadow-[0_-15px_40px_rgba(0,0,0,0.06)]">
       <div className="section-container relative z-10">
         <div className="text-center mb-14">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xs font-extrabold uppercase tracking-[0.2em] text-[var(--color-accent)] mb-2"
-          >
-            Core Advantage
-          </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            style={{ color: "#0d1b2a" }}
-            className="mb-4 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight"
+            className="text-3xl md:text-5xl font-black mb-4 tracking-tight text-[var(--color-ink)]"
           >
             {t("why.title")}
           </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-base md:text-lg max-w-2xl mx-auto font-extrabold text-[var(--color-ink)]/90"
+          >
+            {t("why.subtitle")}
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((reason, i) => (
             <motion.div
               key={reason.titleKey}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className="p-8 rounded-3xl border border-[var(--color-border)] bg-[var(--color-base)] text-center shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-start h-full"
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -6 }}
+              className="group relative rounded-3xl border border-[var(--color-border)] bg-[var(--color-base)] p-6 shadow-sm hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between"
             >
-              <div
-                className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${reason.gradient} text-inverse-ink flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform`}
-              >
-                {reason.icon}
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[var(--color-primary)] text-inverse-ink flex items-center justify-center mb-5 shadow-md">
+                  {reason.icon}
+                </div>
+
+                <h3 className="text-base font-extrabold mb-2.5 text-[var(--color-ink)]">
+                  {t(reason.titleKey)}
+                </h3>
+
+                <p className="text-xs leading-relaxed font-medium text-[var(--color-ink)]/85">
+                  {t(reason.textKey)}
+                </p>
               </div>
-              <h3 style={{ color: "#0d1b2a" }} className="text-base font-extrabold mb-2.5">
-                {t(reason.titleKey)}
-              </h3>
-              <p style={{ color: "#283747" }} className="text-xs leading-relaxed font-medium">
-                {t(reason.textKey)}
-              </p>
             </motion.div>
           ))}
         </div>
