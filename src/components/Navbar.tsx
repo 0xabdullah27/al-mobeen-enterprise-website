@@ -99,10 +99,10 @@ export default function Navbar() {
               AM
             </div>
             <div>
-              <span className="font-extrabold text-base sm:text-lg tracking-tight text-[var(--color-ink)] block leading-none">
+              <span style={{ color: "#0d1b2a" }} className="font-black text-base sm:text-lg tracking-tight block leading-none dark:!text-white">
                 Al Mobeen Enterprise
               </span>
-              <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[var(--color-neutral)] hidden sm:block mt-0.5">
+              <span style={{ color: "#1b263b" }} className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider hidden sm:block mt-0.5 dark:!text-slate-300">
                 Bulk Chemical Trader • Est. 1995
               </span>
             </div>
@@ -229,7 +229,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between pb-5 border-b border-[var(--color-border)] mb-6">
                   <div className="flex items-center gap-2">
                     <img src="/ame-logo.png" alt="Logo" className="h-8 w-auto object-contain" />
-                    <span className="font-extrabold text-base text-[var(--color-ink)]">
+                    <span style={{ color: "#0d1b2a" }} className="font-black text-base dark:!text-white">
                       Al Mobeen
                     </span>
                   </div>
