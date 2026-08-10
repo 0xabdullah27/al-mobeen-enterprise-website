@@ -11,6 +11,7 @@ import { ToastProvider } from "@/components/ui/Toast";
 import QuoteListDrawer from "@/components/QuoteListDrawer";
 import ChemicalMascotWidget from "@/components/ChemicalMascotWidget";
 import ScrollProgressWidget from "@/components/ScrollProgressWidget";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -85,21 +86,23 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[var(--color-base)] text-[var(--color-ink)] transition-colors duration-300 relative">
-        <ThemeProvider>
-          <LanguageProvider>
-            <QuoteProvider>
-              <ToastProvider>
-                <Navbar />
-                <main className="flex-1 relative z-10">{children}</main>
-                <Footer />
-                <WhatsAppButton />
-                <ChemicalMascotWidget />
-                <ScrollProgressWidget />
-                <QuoteListDrawer />
-              </ToastProvider>
-            </QuoteProvider>
-          </LanguageProvider>
-        </ThemeProvider>
+        <SmoothScrollProvider>
+          <ThemeProvider>
+            <LanguageProvider>
+              <QuoteProvider>
+                <ToastProvider>
+                  <Navbar />
+                  <main className="flex-1 relative z-10">{children}</main>
+                  <Footer />
+                  <WhatsAppButton />
+                  <ChemicalMascotWidget />
+                  <ScrollProgressWidget />
+                  <QuoteListDrawer />
+                </ToastProvider>
+              </QuoteProvider>
+            </LanguageProvider>
+          </ThemeProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

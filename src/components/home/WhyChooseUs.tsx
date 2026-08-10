@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
   const { t } = useLanguage();
 
   return (
-    <section className="section-padding bg-[var(--color-surface)] relative overflow-hidden rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 z-[60] border-t border-[var(--color-border)] shadow-[0_-15px_40px_rgba(0,0,0,0.06)]">
+    <section className="section-padding bg-[var(--color-surface)] relative overflow-hidden rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 z-[60] shadow-[0_-15px_40px_rgba(0,0,0,0.06)]">
       <div className="section-container relative z-10">
         <div className="text-center mb-14">
           <motion.p

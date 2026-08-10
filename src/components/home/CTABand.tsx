@@ -11,7 +11,7 @@ export default function CTABand() {
   )}`;
 
   return (
-    <section className="relative overflow-hidden bg-[var(--color-surface)] border-t border-[var(--color-border)] rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 z-[70] shadow-[0_-15px_40px_rgba(0,0,0,0.06)]">
+    <section className="relative overflow-hidden bg-[var(--color-surface)] rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 z-[70] shadow-[0_-15px_40px_rgba(0,0,0,0.06)]">
       {/* Background glowing shapes */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-warning/10 rounded-full blur-[100px]" />

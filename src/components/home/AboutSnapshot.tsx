@@ -8,7 +8,7 @@ export default function AboutSnapshot() {
   const { t } = useLanguage();
 
   return (
-    <section className="section-padding rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 relative z-20 border-t border-[var(--color-border)] shadow-[0_-15px_40px_rgba(0,0,0,0.06)]" style={{ background: "var(--color-surface)" }}>
+    <section className="section-padding rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 relative z-20 shadow-[0_-15px_40px_rgba(0,0,0,0.06)]" style={{ background: "var(--color-surface)" }}>
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Column */}

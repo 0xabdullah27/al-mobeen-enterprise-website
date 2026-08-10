@@ -10,7 +10,7 @@ export default function BestSellersMarquee() {
   const items = [...bestSellers, ...bestSellers];
 
   return (
-    <section className="py-10 bg-[var(--color-surface)] overflow-hidden rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 relative z-40 border-t border-[var(--color-border)] shadow-[0_-15px_40px_rgba(0,0,0,0.06)]">
+    <section className="py-10 bg-[var(--color-surface)] overflow-hidden rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 relative z-40 shadow-[0_-15px_40px_rgba(0,0,0,0.06)]">
       <div className="section-container mb-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-accent)] animate-pulse" />

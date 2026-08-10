@@ -62,7 +62,7 @@ export default function IndustriesSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="section-padding rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 relative z-50 border-t border-[var(--color-border)] shadow-[0_-15px_40px_rgba(0,0,0,0.06)]" style={{ background: "var(--color-base)" }}>
+    <section className="section-padding rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 relative z-50 shadow-[0_-15px_40px_rgba(0,0,0,0.06)]" style={{ background: "var(--color-base)" }}>
       <div className="section-container">
         <ScrollReveal>
           <div className="text-center mb-12">

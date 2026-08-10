@@ -10,7 +10,7 @@ export default function ProductCategoriesGrid() {
   const { t } = useLanguage();
 
   return (
-    <section className="section-padding relative overflow-hidden bg-[var(--color-base)] rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 z-30 border-t border-[var(--color-border)] shadow-[0_-15px_40px_rgba(0,0,0,0.06)]">
+    <section className="section-padding relative overflow-hidden bg-[var(--color-base)] rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 z-30 shadow-[0_-15px_40px_rgba(0,0,0,0.06)]">
       {/* Ambient background blobs for glassmorphism to distort */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[10%] -right-[5%] w-[40%] h-[50%] rounded-full bg-[var(--color-primary)]/10 blur-[100px]" />
