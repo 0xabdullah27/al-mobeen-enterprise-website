@@ -81,6 +81,11 @@ export const translations: Record<string, TranslationRecord> = {
 
   // ─── Why Choose Us ───
   "why.title": { en: "Why Choose Al Mobeen Enterprise", romanUrdu: "Al Mobeen Enterprise Ko Kyun Chunein", urdu: "المبین انٹرپرائز کو کیوں چنیں" },
+  "why.subtitle": {
+    en: "Three decades of trusted chemical sourcing and distribution across Pakistan.",
+    romanUrdu: "Pakistan bhar mein teen dashak se bharosemand chemical sourcing aur distribution.",
+    urdu: "پاکستان بھر میں تین دہائیوں سے بھروسہ مند کیمیکل سورسنگ اور ڈسٹری بیوشن۔",
+  },
   "why.experience.title": { en: "30 Years Experience", romanUrdu: "30 Saal Ka Tajurba", urdu: "30 سال کا تجربہ" },
   "why.experience.text": {
     en: "Three decades of reliable chemical distribution from the heart of Jodia Bazar.",

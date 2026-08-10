@@ -18,7 +18,7 @@ export default function WhatsAppButton() {
       rel="noopener noreferrer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="fixed bottom-36 right-6 z-50 flex items-center justify-center rounded-full shadow-2xl transition-all duration-300 whatsapp-pulse bg-[#25D366] text-white overflow-hidden"
+      className="fixed bottom-36 right-6 z-50 flex items-center justify-center rounded-full shadow-2xl transition-all duration-300 whatsapp-pulse bg-whatsapp text-inverse-ink overflow-hidden"
       style={{
         width: hovered ? "auto" : "56px",
         height: "56px",

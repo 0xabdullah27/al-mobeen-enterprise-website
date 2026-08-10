@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useQuote } from "./QuoteProvider";
 import { useLanguage } from "./LanguageProvider";
+import { Button } from "@/components/ui/button";
 
 export default function QuoteListDrawer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,17 +56,16 @@ export default function QuoteListDrawer() {
         className="fixed top-0 right-0 bottom-0 z-[61] w-full max-w-md bg-surface shadow-2xl flex flex-col"
         style={{
           animation: "slideInRight 300ms var(--ease-out)",
-          background: "var(--color-surface)",
         }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-[var(--color-border)] text-[var(--color-ink)]">
-          <h2 style={{ color: "#0d1b2a" }} className="text-lg font-extrabold">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-border text-ink">
+          <h2 className="text-lg font-extrabold text-ink">
             {t("quote.title")} {count > 0 && `(${count})`}
           </h2>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-2 rounded-lg hover:bg-[var(--color-surface-hover)] transition-colors text-[var(--color-ink)]"
+            className="p-2 rounded-lg hover:bg-surface-hover transition-colors text-ink"
             aria-label="Close"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -79,29 +79,29 @@ export default function QuoteListDrawer() {
         <div className="flex-1 overflow-y-auto px-6 py-4">
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-center">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-neutral-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-4">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-4 text-neutral-light">
                 <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
                 <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
               </svg>
-              <p style={{ color: "#1b263b" }} className="font-semibold text-sm">{t("quote.empty")}</p>
+              <p className="font-semibold text-sm text-neutral">{t("quote.empty")}</p>
             </div>
           ) : (
             <ul className="space-y-4">
               {items.map((item) => (
                 <li
                   key={item.slug}
-                  className="p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)]"
+                  className="p-4 rounded-xl border border-border bg-base text-ink"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <p style={{ color: "#0d1b2a" }} className="font-extrabold text-sm">{item.displayName}</p>
-                      <p style={{ color: "#283747" }} className="text-xs font-semibold mt-0.5 capitalize">
+                      <p className="font-extrabold text-sm text-ink">{item.displayName}</p>
+                      <p className="text-xs font-semibold text-neutral-light mt-0.5 capitalize">
                         {item.category.replace(/-/g, " ")}
                       </p>
                     </div>
                     <button
                       onClick={() => removeItem(item.slug)}
-                      className="text-[var(--color-ink)] hover:text-danger transition-colors p-1"
+                      className="text-ink hover:text-danger transition-colors p-1"
                       aria-label={`Remove ${item.displayName}`}
                     >
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -116,14 +116,14 @@ export default function QuoteListDrawer() {
                       placeholder={t("quote.quantity")}
                       value={item.quantity}
                       onChange={(e) => updateQuantity(item.slug, e.target.value)}
-                      className="w-full px-3 py-2 text-sm rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-ink)] font-semibold focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)]"
+                      className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-surface text-ink font-semibold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                     />
                     <input
                       type="text"
                       placeholder={t("quote.notes")}
                       value={item.notes}
                       onChange={(e) => updateNotes(item.slug, e.target.value)}
-                      className="w-full px-3 py-2 text-sm rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-ink)] font-semibold focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)]"
+                      className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-surface text-ink font-semibold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                     />
                   </div>
                 </li>
@@ -134,14 +134,15 @@ export default function QuoteListDrawer() {
 
         {/* Footer */}
         {items.length > 0 && (
-          <div className="px-6 py-5 border-t border-[var(--color-border)]">
-            <Link
-              href={`/contact?products=${items.map((i) => i.slug).join(",")}`}
-              onClick={() => setIsOpen(false)}
-              className="btn-primary w-full justify-center text-center"
-            >
-              {t("quote.send")}
-            </Link>
+          <div className="px-6 py-5 border-t border-border">
+            <Button variant="primary" size="lg" className="w-full justify-center text-center" asChild>
+              <Link
+                href={`/contact?products=${items.map((i) => i.slug).join(",")}`}
+                onClick={() => setIsOpen(false)}
+              >
+                {t("quote.send")}
+              </Link>
+            </Button>
           </div>
         )}
       </div>

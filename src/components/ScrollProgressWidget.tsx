@@ -49,7 +49,7 @@ export default function ScrollProgressWidget() {
         {/* Outer Curved Rotating Text SVG ("SCROLL TO SCROLL • SCROLL TO SCROLL •") */}
         <motion.svg
           style={{ rotate: rotation }}
-          className="absolute inset-0 w-full h-full text-[var(--color-ink)]"
+          className="absolute inset-0 w-full h-full text-ink"
           viewBox="0 0 120 120"
         >
           <defs>
@@ -66,15 +66,15 @@ export default function ScrollProgressWidget() {
         </motion.svg>
 
         {/* Inner Dual-Tone Fill Progress Circle with WhatsApp Logo */}
-        <div className="relative w-[64px] h-[64px] rounded-full bg-[#111111] overflow-hidden border-2 border-[var(--color-border)] shadow-2xl flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all">
+        <div className="relative w-[64px] h-[64px] rounded-full bg-inverse-base overflow-hidden border-2 border-border shadow-2xl flex items-center justify-center group-hover:shadow-whatsapp transition-all">
           {/* Green Liquid Fill Level (Fills vertically from top to bottom as you scroll) */}
           <motion.div
             style={{ height: fillHeightPercent }}
-            className="absolute top-0 inset-x-0 bg-[#25D366] transition-all duration-75"
+            className="absolute top-0 inset-x-0 bg-whatsapp transition-all duration-75"
           />
 
-          {/* WhatsApp Logo Icon in the Center (Always pure crisp white) */}
-          <div className="relative z-10 text-white drop-shadow-md">
+          {/* WhatsApp Logo Icon in the Center */}
+          <div className="relative z-10 text-inverse-ink drop-shadow-md">
             <svg
               width="28"
               height="28"

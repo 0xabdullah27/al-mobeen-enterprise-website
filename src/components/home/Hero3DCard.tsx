@@ -127,17 +127,17 @@ export default function Hero3DCard() {
   };
 
   return (
-    <div className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 md:p-8 shadow-xl relative overflow-hidden">
+    <div className="rounded-3xl border border-border bg-surface p-6 md:p-8 shadow-xl relative overflow-hidden">
       {/* Embedded 3D Canvas Box inside card header */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pb-6 border-b border-[var(--color-border)]">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pb-6 border-b border-border">
         <div>
-          <span className="text-[10px] font-extrabold uppercase tracking-wider text-[var(--color-accent)] block mb-1">
+          <span className="text-[10px] font-extrabold uppercase tracking-wider text-accent block mb-1">
             Bulk Spec Visualizer
           </span>
-          <h3 className="text-lg font-extrabold text-[var(--color-ink)]">
+          <h3 className="text-lg font-extrabold text-ink">
             Industrial Drum & Spec Finder
           </h3>
-          <p className="text-xs text-[var(--color-neutral)]">
+          <p className="text-xs text-neutral">
             Jodia Trading Desk Stock
           </p>
         </div>
@@ -145,7 +145,7 @@ export default function Hero3DCard() {
         {/* 3D WebGL Canvas strictly framed inside this container */}
         <div
           ref={mountRef}
-          className="w-32 h-32 rounded-2xl bg-[var(--color-base)] border border-[var(--color-border)] relative shrink-0"
+          className="w-32 h-32 rounded-2xl bg-base border border-border relative shrink-0"
         />
       </div>
 
@@ -156,16 +156,16 @@ export default function Hero3DCard() {
           placeholder="Search e.g. DOP, Titanium, Xylene, MEG..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-9 pr-4 py-2.5 text-xs rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/30 font-medium"
+          className="w-full pl-9 pr-4 py-2.5 text-xs rounded-xl border border-border bg-base text-ink focus:outline-none focus:ring-2 focus:ring-accent/30 font-medium"
         />
         <svg
           width="14"
           height="14"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="var(--color-neutral)"
+          stroke="currentColor"
           strokeWidth="2"
-          className="absolute left-3 top-1/2 -translate-y-1/2"
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral"
         >
           <circle cx="11" cy="11" r="8" />
           <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -179,11 +179,11 @@ export default function Hero3DCard() {
           return (
             <div
               key={p.slug}
-              className="p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] flex items-center justify-between text-xs hover:border-[var(--color-primary)] transition-colors"
+              className="p-3 rounded-xl border border-border bg-base flex items-center justify-between text-xs hover:border-primary transition-colors"
             >
               <div>
-                <p className="font-bold text-[var(--color-ink)]">{p.displayName}</p>
-                <p className="text-[10px] text-[var(--color-neutral)]">
+                <p className="font-bold text-ink">{p.displayName}</p>
+                <p className="text-[10px] text-neutral">
                   {p.packaging} • {p.grade}
                 </p>
               </div>
@@ -192,7 +192,7 @@ export default function Hero3DCard() {
                 className={`px-3 py-1.5 rounded-lg text-[10px] font-extrabold shrink-0 transition-colors ${
                   added
                     ? "bg-success text-inverse-ink"
-                    : "bg-[var(--color-accent)] text-inverse-ink hover:bg-[var(--color-accent-hover)]"
+                    : "bg-accent text-inverse-ink hover:bg-accent-hover"
                 }`}
               >
                 {added ? "✓ Added" : "+ Quote"}

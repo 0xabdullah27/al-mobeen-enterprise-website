@@ -21,8 +21,8 @@ export default function ChemicalMascotWidget() {
   const quickItems = products.filter((p) => p.bestSeller).slice(0, 5);
   const searchResults = searchQuery.trim()
     ? products.filter((p) =>
-        p.displayName.toLowerCase().includes(searchQuery.toLowerCase())
-      ).slice(0, 4)
+      p.displayName.toLowerCase().includes(searchQuery.toLowerCase())
+    ).slice(0, 4)
     : quickItems;
 
   const handleAdd = (p: typeof products[0]) => {
@@ -47,7 +47,7 @@ export default function ChemicalMascotWidget() {
               className="relative"
             >
               {/* Tooltip speech bubble */}
-              <div className="hidden md:block mb-2 px-3 py-1.5 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] shadow-lg text-[11px] font-bold text-[var(--color-ink)] whitespace-nowrap">
+              <div className="hidden md:block mb-2 px-3 py-1.5 rounded-2xl bg-surface border border-border shadow-lg text-[11px] font-bold text-ink whitespace-nowrap">
                 <span className="inline-block w-2 h-2 rounded-full bg-success mr-1.5 animate-pulse" />
                 Quick Quote Helper
               </div>
@@ -68,11 +68,11 @@ export default function ChemicalMascotWidget() {
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-600 to-blue-700 text-inverse-ink flex items-center justify-center shadow-2xl border-2 border-inverse-ink/20 relative group"
+                className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary via-primary-light to-accent text-inverse-ink flex items-center justify-center shadow-2xl border-2 border-inverse-ink/20 relative group"
                 aria-label="Quick Chemical Companion"
               >
                 {/* Glowing ring */}
-                <div className="absolute -inset-1 rounded-2xl bg-emerald-500/30 blur-md group-hover:bg-emerald-500/50 transition-all -z-10" />
+                <div className="absolute -inset-1 rounded-2xl bg-accent/30 blur-md group-hover:bg-accent/50 transition-all -z-10" />
 
                 {/* Animated Chemical Flask Icon */}
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -106,21 +106,21 @@ export default function ChemicalMascotWidget() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.85, y: 40 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="fixed bottom-6 left-6 z-50 w-full max-w-sm bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl p-5 shadow-2xl overflow-hidden"
+              className="fixed bottom-6 left-6 z-50 w-full max-w-sm bg-surface border border-border rounded-3xl p-5 shadow-2xl overflow-hidden"
             >
-              <div className="flex items-center justify-between mb-4 pb-3 border-b border-[var(--color-border)]">
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-xl bg-success text-inverse-ink flex items-center justify-center font-bold text-xs">
                     AM
                   </div>
                   <div>
-                    <h4 style={{ color: "#0d1b2a" }} className="text-sm font-black">Jodia Desk Assistant</h4>
-                    <p style={{ color: "#283747" }} className="text-[10px] font-bold">Bulk Quote & Fast Sourcing</p>
+                    <h4 className="text-sm font-black text-ink">Jodia Desk Assistant</h4>
+                    <p className="text-[10px] font-bold text-neutral-light">Bulk Quote & Fast Sourcing</p>
                   </div>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-1.5 rounded-lg text-[var(--color-ink)] hover:bg-[var(--color-base)] transition-colors font-bold"
+                  className="p-1.5 rounded-lg text-ink hover:bg-base transition-colors font-bold"
                 >
                   ✕
                 </button>
@@ -133,9 +133,9 @@ export default function ChemicalMascotWidget() {
                   placeholder="Search 80+ chemicals..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-3 py-2 text-xs rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
+                  className="w-full pl-9 pr-3 py-2 text-xs rounded-xl border border-border bg-base text-ink font-semibold focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-ink)]/70">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink/70">
                   <circle cx="11" cy="11" r="8" />
                   <line x1="21" y1="21" x2="16.65" y2="16.65" />
                 </svg>
@@ -148,17 +148,16 @@ export default function ChemicalMascotWidget() {
                   return (
                     <div
                       key={p.slug}
-                      className="p-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] flex items-center justify-between text-xs"
+                      className="p-2.5 rounded-xl border border-border bg-base flex items-center justify-between text-xs"
                     >
                       <div>
-                        <p style={{ color: "#0d1b2a" }} className="font-extrabold">{p.displayName}</p>
-                        <p style={{ color: "#283747" }} className="text-[10px] font-bold">{p.packaging}</p>
+                        <p className="font-extrabold text-ink">{p.displayName}</p>
+                        <p className="text-[10px] font-bold text-neutral-light">{p.packaging}</p>
                       </div>
                       <button
                         onClick={() => handleAdd(p)}
-                        className={`px-2.5 py-1 rounded-lg text-[10px] font-bold ${
-                          inList ? "bg-success text-inverse-ink" : "bg-[var(--color-primary)] text-inverse-ink"
-                        }`}
+                        className={`px-2.5 py-1 rounded-lg text-[10px] font-bold ${inList ? "bg-success text-inverse-ink" : "bg-primary text-inverse-ink"
+                          }`}
                       >
                         {inList ? "✓ Added" : "+ Quote"}
                       </button>
@@ -168,12 +167,12 @@ export default function ChemicalMascotWidget() {
               </div>
 
               {/* Actions */}
-              <div className="flex items-center gap-2 pt-2 border-t border-[var(--color-border)]">
+              <div className="flex items-center gap-2 pt-2 border-t border-border">
                 <a
                   href={waLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-2.5 rounded-xl bg-[#25D366] text-inverse-ink text-xs font-bold text-center flex items-center justify-center gap-1.5 shadow-sm"
+                  className="flex-1 py-2.5 rounded-xl bg-whatsapp text-inverse-ink text-xs font-bold text-center flex items-center justify-center gap-1.5 shadow-sm"
                 >
                   WhatsApp Inquiry
                 </a>

@@ -4,6 +4,7 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useQuote } from "@/components/QuoteProvider";
 import { useLanguage } from "@/components/LanguageProvider";
+import { Button } from "@/components/ui/button";
 
 function ContactFormContent() {
   const searchParams = useSearchParams();
@@ -80,9 +81,9 @@ function ContactFormContent() {
   };
 
   return (
-    <div className="bg-[var(--color-surface)] text-[var(--color-ink)] rounded-3xl border border-[var(--color-border)] p-6 md:p-10 shadow-sm">
-      <h2 style={{ color: "#0d1b2a" }} className="text-xl md:text-2xl font-bold mb-2">Request a Bulk Quote</h2>
-      <p style={{ color: "#1b263b" }} className="text-xs md:text-sm font-semibold mb-6">
+    <div className="bg-surface text-ink rounded-3xl border border-border p-6 md:p-10 shadow-sm">
+      <h2 className="text-xl md:text-2xl font-bold mb-2 text-ink">Request a Bulk Quote</h2>
+      <p className="text-xs md:text-sm font-semibold mb-6 text-ink opacity-85">
         Fill out your requirements below and our sales desk at Jodia Bazar will contact you within 24 hours.
       </p>
 
@@ -94,10 +95,10 @@ function ContactFormContent() {
             </svg>
           </div>
           <h3 className="text-2xl font-bold mb-2">Quote Request Sent!</h3>
-          <p className="text-sm text-[var(--color-neutral)] max-w-md mx-auto mb-8">
-            Thank you! Your quote request has been received. Our team will review your specifications and contact you at <span className="font-semibold text-[var(--color-ink)]">{phone}</span> shortly.
+          <p className="text-sm text-neutral max-w-md mx-auto mb-8">
+            Thank you! Your quote request has been received. Our team will review your specifications and contact you at <span className="font-semibold text-ink">{phone}</span> shortly.
           </p>
-          <button
+          <Button
             onClick={() => {
               setStatus("idle");
               setName("");
@@ -108,10 +109,11 @@ function ContactFormContent() {
               setQuantity("");
               setMessage("");
             }}
-            className="btn-outline !text-xs"
+            variant="outline"
+            size="sm"
           >
             Submit Another Request
-          </button>
+          </Button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -123,7 +125,7 @@ function ContactFormContent() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[var(--color-ink)] mb-1">
+              <label className="block text-xs font-semibold text-ink mb-1">
                 {t("contact.form.name")} <span className="text-danger">*</span>
               </label>
               <input
@@ -132,11 +134,11 @@ function ContactFormContent() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Full Name"
-                className="w-full px-4 py-2.5 text-sm rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] font-semibold focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)]"
+                className="w-full px-4 py-2.5 text-sm rounded-xl border border-border bg-base text-ink font-semibold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
               />
             </div>
             <div>
-              <label className="block text-xs font-semibold text-[var(--color-ink)] mb-1">
+              <label className="block text-xs font-semibold text-ink mb-1">
                 {t("contact.form.company")}
               </label>
               <input
@@ -144,14 +146,14 @@ function ContactFormContent() {
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
                 placeholder="Company / Factory Name"
-                className="w-full px-4 py-2.5 text-sm rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] font-semibold focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)]"
+                className="w-full px-4 py-2.5 text-sm rounded-xl border border-border bg-base text-ink font-semibold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[var(--color-ink)] mb-1">
+              <label className="block text-xs font-semibold text-ink mb-1">
                 {t("contact.form.phone")} <span className="text-danger">*</span>
               </label>
               <input
@@ -160,11 +162,11 @@ function ContactFormContent() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="e.g. 0300-1234567"
-                className="w-full px-4 py-2.5 text-sm rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] font-semibold focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)]"
+                className="w-full px-4 py-2.5 text-sm rounded-xl border border-border bg-base text-ink font-semibold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
               />
             </div>
             <div>
-              <label className="block text-xs font-semibold text-[var(--color-ink)] mb-1">
+              <label className="block text-xs font-semibold text-ink mb-1">
                 Email Address (Optional)
               </label>
               <input
@@ -172,13 +174,13 @@ function ContactFormContent() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@company.com"
-                className="w-full px-4 py-2.5 text-sm rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] font-semibold focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)]"
+                className="w-full px-4 py-2.5 text-sm rounded-xl border border-border bg-base text-ink font-semibold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[var(--color-ink)] mb-1">
+            <label className="block text-xs font-semibold text-ink mb-1">
               {t("contact.form.products")}
             </label>
             <input
@@ -186,12 +188,12 @@ function ContactFormContent() {
               value={selectedProductsText}
               onChange={(e) => setSelectedProductsText(e.target.value)}
               placeholder="e.g. DOP, Titanium Dioxide, Xylene, Ethyl Alcohol..."
-              className="w-full px-4 py-2.5 text-sm rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] font-semibold focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)]"
+              className="w-full px-4 py-2.5 text-sm rounded-xl border border-border bg-base text-ink font-semibold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[var(--color-ink)] mb-1">
+            <label className="block text-xs font-semibold text-ink mb-1">
               {t("contact.form.quantity")}
             </label>
             <input
@@ -199,12 +201,12 @@ function ContactFormContent() {
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
               placeholder="e.g. 5 Drums, 20 Tons, Monthly requirement..."
-              className="w-full px-4 py-2.5 text-sm rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] font-semibold focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)]"
+              className="w-full px-4 py-2.5 text-sm rounded-xl border border-border bg-base text-ink font-semibold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[var(--color-ink)] mb-1">
+            <label className="block text-xs font-semibold text-ink mb-1">
               {t("contact.form.message")}
             </label>
             <textarea
@@ -212,14 +214,16 @@ function ContactFormContent() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Provide any specific specifications, target delivery dates, or inquiry notes..."
-              className="w-full px-4 py-2.5 text-sm rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] font-semibold focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)]"
+              className="w-full px-4 py-2.5 text-sm rounded-xl border border-border bg-base text-ink font-semibold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
             />
           </div>
 
-          <button
+          <Button
             type="submit"
             disabled={status === "submitting"}
-            className="btn-primary w-full justify-center !py-3.5"
+            variant="primary"
+            size="lg"
+            className="w-full justify-center"
           >
             {status === "submitting" ? (
               <span className="flex items-center gap-2">
@@ -229,7 +233,7 @@ function ContactFormContent() {
             ) : (
               t("contact.form.submit")
             )}
-          </button>
+          </Button>
         </form>
       )}
     </div>
@@ -240,7 +244,7 @@ import PageHero from "@/components/ui/PageHero";
 
 export default function ContactPage() {
   return (
-    <div className="bg-[var(--color-base)] min-h-screen">
+    <div className="bg-base min-h-screen">
       <PageHero
         title="Contact Al Mobeen Enterprise"
         description="Reach out directly to our sales office at Jodia Bazar, Karachi for bulk chemical inquiries, quotes, and product availability."
@@ -260,65 +264,65 @@ export default function ContactPage() {
           {/* Contact Cards & Map */}
           <div className="lg:col-span-5 space-y-6">
             {/* Info Box */}
-            <div className="bg-surface rounded-3xl border border-[var(--color-border)] p-6 md:p-8 shadow-sm">
-              <h3 className="text-lg font-bold mb-4 text-[var(--color-primary)]">
+            <div className="bg-surface rounded-3xl border border-border p-6 md:p-8 shadow-sm">
+              <h3 className="text-lg font-bold mb-4 text-primary">
                 Jodia Bazar Main Office
               </h3>
 
-              <div className="space-y-4 text-xs md:text-sm text-[var(--color-ink)]">
+              <div className="space-y-4 text-xs md:text-sm text-ink">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[var(--color-primary)]/10 text-[var(--color-primary)] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                       <circle cx="12" cy="10" r="3" />
                     </svg>
                   </div>
                   <div>
-                    <strong className="block text-xs text-[var(--color-neutral)] uppercase tracking-wider mb-0.5">Address</strong>
+                    <strong className="block text-xs text-neutral uppercase tracking-wider mb-0.5">Address</strong>
                     <span>G/9, Golden Center, Weaver Lane, Jodia Bazar, Karachi, Pakistan</span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[var(--color-primary)]/10 text-[var(--color-primary)] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
                   </div>
                   <div>
-                    <strong className="block text-xs text-[var(--color-neutral)] uppercase tracking-wider mb-0.5">Phone & WhatsApp</strong>
+                    <strong className="block text-xs text-neutral uppercase tracking-wider mb-0.5">Phone & WhatsApp</strong>
                     <div className="flex flex-col gap-1 font-medium">
-                      <a href="tel:+923321134530" className="hover:text-[var(--color-accent)] transition-colors">0332-1134530 (Primary)</a>
-                      <a href="tel:+923002268847" className="hover:text-[var(--color-accent)] transition-colors">0300-2268847</a>
-                      <a href="tel:+923152703824" className="hover:text-[var(--color-accent)] transition-colors">0315-2703824</a>
+                    <a href="tel:+923321134530" className="hover:text-accent transition-colors">0332-1134530 (Primary)</a>
+                      <a href="tel:+923002268847" className="hover:text-accent transition-colors">0300-2268847</a>
+                      <a href="tel:+923152703824" className="hover:text-accent transition-colors">0315-2703824</a>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[var(--color-primary)]/10 text-[var(--color-primary)] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="2" y="4" width="20" height="16" rx="2" />
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                     </svg>
                   </div>
                   <div>
-                    <strong className="block text-xs text-[var(--color-neutral)] uppercase tracking-wider mb-0.5">Email</strong>
-                    <a href="mailto:almobeenenterprise@gmail.com" className="hover:text-[var(--color-accent)] transition-colors font-medium">
+                    <strong className="block text-xs text-neutral uppercase tracking-wider mb-0.5">Email</strong>
+                    <a href="mailto:almobeenenterprise@gmail.com" className="hover:text-accent transition-colors font-medium">
                       almobeenenterprise@gmail.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[var(--color-primary)]/10 text-[var(--color-primary)] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10" />
                       <polyline points="12 6 12 12 16 14" />
                     </svg>
                   </div>
                   <div>
-                    <strong className="block text-xs text-[var(--color-neutral)] uppercase tracking-wider mb-0.5">Business Hours</strong>
+                    <strong className="block text-xs text-neutral uppercase tracking-wider mb-0.5">Business Hours</strong>
                     <span>Monday – Saturday: 9:00 AM – 6:00 PM</span>
                   </div>
                 </div>
@@ -326,7 +330,7 @@ export default function ContactPage() {
             </div>
 
             {/* Google Map Embed */}
-            <div className="bg-surface rounded-3xl border border-[var(--color-border)] p-2 shadow-sm overflow-hidden h-64">
+            <div className="bg-surface rounded-3xl border border-border p-2 shadow-sm overflow-hidden h-64">
               <iframe
                 title="Al Mobeen Enterprise Jodia Bazar Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.3542289635956!2d67.000673!3d24.851778!2m3!1f00!2f00!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e08f51a2eb3%3A0x86f8749a04a3eb3!2sJodia%20Bazar%2C%20Karachi!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk"

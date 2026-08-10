@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useQuote } from "./QuoteProvider";
 import { useLanguage } from "./LanguageProvider";
 import { useTheme } from "./ThemeProvider";
+import { Button } from "@/components/ui/button";
 import { type Language, languageNames } from "@/data/translations";
 
 export default function Navbar() {
@@ -42,7 +43,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top B2B Announcement Bar (Hidden on Mobile) */}
-      <div className="bg-[var(--color-primary)] text-inverse-ink py-2 px-4 text-xs font-semibold border-b border-inverse-ink/10 hidden md:block">
+      <div className="bg-primary text-inverse-ink py-2 px-4 text-xs font-semibold border-b border-inverse-ink/10 hidden md:block">
         <div className="section-container flex items-center justify-between">
           <div className="flex items-center gap-6 text-inverse-ink/90">
             <span className="flex items-center gap-1.5">
@@ -64,7 +65,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <a
               href="tel:+923321134530"
-              className="flex items-center gap-1.5 text-inverse-ink hover:text-[var(--color-accent)] transition-colors"
+              className="flex items-center gap-1.5 text-inverse-ink hover:text-accent transition-colors"
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -77,32 +78,31 @@ export default function Navbar() {
 
       {/* Main Sticky Header */}
       <header
-        className={`sticky top-0 inset-x-0 z-40 transition-all duration-300 ${
-          scrolled
-            ? "glass-nav py-3 border-b border-[var(--color-border)] shadow-sm"
-            : "bg-[var(--color-surface)] py-3.5 border-b border-[var(--color-border)]"
-        }`}
+        className={`sticky top-0 inset-x-0 z-40 transition-all duration-300 ${scrolled
+          ? "glass-nav py-3 border-b border-border shadow-sm"
+          : "bg-surface py-3.5 border-b border-border"
+          }`}
       >
         <div className="section-container flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 z-10 group shrink-0">
-            <img 
-              src="/ame-logo.png" 
-              alt="Al Mobeen Enterprise Logo" 
+            <img
+              src="/ame-logo.png"
+              alt="Al Mobeen Enterprise Logo"
               className="h-9 sm:h-11 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
                 e.currentTarget.nextElementSibling?.classList.remove('hidden');
               }}
             />
-            <div className="hidden w-9 h-9 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-ink)] flex items-center justify-center text-inverse-ink font-black text-lg shadow-md">
+            <div className="hidden w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-ink flex items-center justify-center text-inverse-ink font-black text-lg shadow-md">
               AM
             </div>
-            <div>
-              <span style={{ color: "#0d1b2a" }} className="font-black text-base sm:text-lg tracking-tight block leading-none dark:!text-white">
+            <div className="hidden sm:block">
+              <span className="text-ink font-black text-base sm:text-lg tracking-tight block leading-none">
                 Al Mobeen Enterprise
               </span>
-              <span style={{ color: "#1b263b" }} className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider hidden sm:block mt-0.5 dark:!text-slate-300">
+              <span className="text-neutral text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider block mt-0.5">
                 Bulk Chemical Trader • Est. 1995
               </span>
             </div>
@@ -114,10 +114,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-sm font-bold text-[var(--color-ink)] hover:text-[var(--color-primary)] transition-colors py-1 group"
+                className="relative text-sm font-bold text-ink hover:text-primary transition-colors py-1 group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all duration-300 group-hover:w-full rounded-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full rounded-full" />
               </Link>
             ))}
           </nav>
@@ -127,15 +127,15 @@ export default function Navbar() {
             {/* Dark/Light Mode Toggle (Desktop & Tablet) */}
             <button
               onClick={toggleTheme}
-              className="hidden md:flex p-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] hover:bg-[var(--color-surface-hover)] transition-colors shadow-sm"
+              className="hidden md:flex p-2.5 rounded-xl border border-border bg-base text-ink hover:bg-surface-hover transition-colors shadow-sm"
               aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
             >
               {theme === "light" ? (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[var(--color-ink)]">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-ink">
                   <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
                 </svg>
               ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[var(--color-accent)]">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent">
                   <circle cx="12" cy="12" r="4" />
                   <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M18.36 5.64l1.41-1.41" />
                 </svg>
@@ -143,28 +143,27 @@ export default function Navbar() {
             </button>
 
             {/* Language Switcher (Desktop Only) */}
-            <div className="hidden lg:flex items-center rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] overflow-hidden text-xs shadow-sm p-0.5">
+            <div className="hidden lg:flex items-center rounded-xl border border-border bg-base overflow-hidden text-xs shadow-sm p-0.5">
               {(["en", "romanUrdu", "urdu"] as Language[]).map((l) => (
                 <button
                   key={l}
                   onClick={() => setLang(l)}
-                  className={`px-3 py-1 rounded-lg transition-all font-bold ${
-                    lang === l
-                      ? "bg-[var(--color-primary)] text-inverse-ink shadow-sm"
-                      : "text-[var(--color-neutral)] hover:text-[var(--color-ink)]"
-                  }`}
+                  className={`px-3 py-1 rounded-lg transition-all font-bold ${lang === l
+                    ? "bg-primary text-inverse-ink shadow-sm"
+                    : "text-neutral hover:text-ink"
+                    }`}
                 >
                   {languageNames[l]}
                 </button>
               ))}
             </div>
 
-            {/* Quote List Drawer Trigger Button */}
+            {/* Quote List / Cart Icon Button (Visible on Mobile & Desktop) */}
             <button
               onClick={() => {
                 window.dispatchEvent(new CustomEvent("toggle-quote-drawer"));
               }}
-              className="relative p-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] hover:bg-[var(--color-surface-hover)] transition-colors shadow-sm"
+              className="flex relative p-2.5 rounded-xl border border-border bg-base text-ink hover:bg-surface-hover transition-colors shadow-sm"
               aria-label="Quote List"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -173,24 +172,23 @@ export default function Navbar() {
                 <path d="M9 14l2 2 4-4" />
               </svg>
               {count > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[var(--color-accent)] text-inverse-ink text-[10px] font-extrabold flex items-center justify-center shadow-md">
+                <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-accent text-inverse-ink text-[10px] font-extrabold flex items-center justify-center shadow-md">
                   {count}
                 </span>
               )}
             </button>
 
             {/* Desktop CTA */}
-            <Link
-              href="/contact"
-              className="btn-primary hidden md:inline-flex !py-2.5 !px-5 !text-sm"
-            >
-              {t("nav.getQuote")}
-            </Link>
+            <Button variant="primary" size="default" className="hidden lg:inline-flex" asChild>
+              <Link href="/contact">
+                {t("nav.getQuote")}
+              </Link>
+            </Button>
 
             {/* Mobile Hamburger Icon */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden p-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] hover:bg-[var(--color-surface-hover)] transition-colors"
+              className="lg:hidden p-2.5 rounded-xl border border-border bg-base text-ink hover:bg-surface-hover transition-colors"
               aria-label="Open Navigation Menu"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -222,20 +220,20 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 250 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-[85%] max-w-[340px] bg-[var(--color-surface)] border-l border-[var(--color-border)] shadow-2xl flex flex-col justify-between p-6 overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 z-50 w-[85%] max-w-[340px] bg-surface border-l border-border shadow-2xl flex flex-col justify-between p-6 overflow-y-auto"
             >
               {/* Drawer Header */}
               <div>
-                <div className="flex items-center justify-between pb-5 border-b border-[var(--color-border)] mb-6">
+                <div className="flex items-center justify-between pb-5 border-b border-border mb-6">
                   <div className="flex items-center gap-2">
                     <img src="/ame-logo.png" alt="Logo" className="h-8 w-auto object-contain" />
-                    <span style={{ color: "#0d1b2a" }} className="font-black text-base dark:!text-white">
+                    <span className="font-black text-base text-ink">
                       Al Mobeen
                     </span>
                   </div>
                   <button
                     onClick={() => setMobileMenuOpen(false)}
-                    className="p-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-ink)] hover:bg-[var(--color-surface-hover)]"
+                    className="p-2 rounded-xl border border-border bg-base text-ink hover:bg-surface-hover"
                     aria-label="Close menu"
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -252,7 +250,7 @@ export default function Navbar() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="px-4 py-3 rounded-xl font-extrabold text-base text-[var(--color-ink)] hover:bg-[var(--color-base)] transition-colors flex items-center justify-between"
+                      className="px-4 py-3 rounded-xl font-extrabold text-base text-ink hover:bg-base transition-colors flex items-center justify-between"
                     >
                       <span>{link.label}</span>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -262,22 +260,44 @@ export default function Navbar() {
                   ))}
                 </nav>
 
-                {/* Controls Section: Language & Theme */}
-                <div className="space-y-4 pt-4 border-t border-[var(--color-border)] mb-6">
+                {/* Controls Section: Language, Theme & Quote List */}
+                <div className="space-y-4 pt-4 border-t border-border mb-6">
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      window.dispatchEvent(new CustomEvent("toggle-quote-drawer"));
+                    }}
+                    className="w-full flex items-center justify-between p-3 rounded-xl bg-base border border-border text-ink font-bold text-xs hover:bg-surface-hover transition-colors shadow-xs"
+                  >
+                    <span className="flex items-center gap-2">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+                        <path d="M9 14l2 2 4-4" />
+                      </svg>
+                      {t("quote.title") || "Quote List"}
+                    </span>
+                    {count > 0 ? (
+                      <span className="px-2 py-0.5 rounded-full bg-accent text-inverse-ink text-[10px] font-extrabold shadow-xs">
+                        {count} Selected
+                      </span>
+                    ) : (
+                      <span className="text-[10px] text-neutral font-semibold">0 Items</span>
+                    )}
+                  </button>
                   <div>
-                    <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-neutral)] block mb-2">
+                    <label className="text-xs font-bold uppercase tracking-wider text-neutral block mb-2">
                       Language / Zaban
                     </label>
-                    <div className="grid grid-cols-3 gap-1.5 bg-[var(--color-base)] p-1 rounded-xl border border-[var(--color-border)] text-xs font-bold text-center">
+                    <div className="grid grid-cols-3 gap-1.5 bg-base p-1 rounded-xl border border-border text-xs font-bold text-center">
                       {(["en", "romanUrdu", "urdu"] as Language[]).map((l) => (
                         <button
                           key={l}
                           onClick={() => setLang(l)}
-                          className={`py-2 rounded-lg transition-all ${
-                            lang === l
-                              ? "bg-[var(--color-primary)] text-inverse-ink shadow-sm"
-                              : "text-[var(--color-neutral)] hover:text-[var(--color-ink)]"
-                          }`}
+                          className={`py-2 rounded-lg transition-all ${lang === l
+                            ? "bg-primary text-inverse-ink shadow-sm"
+                            : "text-neutral hover:text-ink"
+                            }`}
                         >
                           {languageNames[l]}
                         </button>
@@ -286,10 +306,10 @@ export default function Navbar() {
                   </div>
 
                   <div>
-                    <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-neutral)] block mb-2">
+                    <label className="text-xs font-bold uppercase tracking-wider text-neutral block mb-2">
                       Appearance Theme
                     </label>
-                    <div className="grid grid-cols-3 gap-1.5 bg-[var(--color-base)] p-1 rounded-xl border border-[var(--color-border)] text-xs font-bold text-center">
+                    <div className="grid grid-cols-3 gap-1.5 bg-base p-1 rounded-xl border border-border text-xs font-bold text-center">
                       {[
                         { id: "light", label: "☀️ Light" },
                         { id: "dark", label: "🌙 Dark" },
@@ -298,11 +318,10 @@ export default function Navbar() {
                         <button
                           key={item.id}
                           onClick={() => setTheme(item.id as "light" | "dark" | "system")}
-                          className={`py-2 rounded-lg transition-all ${
-                            theme === item.id
-                              ? "bg-[var(--color-primary)] text-inverse-ink shadow-sm"
-                              : "text-[var(--color-neutral)] hover:text-[var(--color-ink)]"
-                          }`}
+                          className={`py-2 rounded-lg transition-all ${theme === item.id
+                            ? "bg-primary text-inverse-ink shadow-sm"
+                            : "text-neutral hover:text-ink"
+                            }`}
                         >
                           {item.label}
                         </button>
@@ -313,24 +332,24 @@ export default function Navbar() {
               </div>
 
               {/* Drawer Footer Actions */}
-              <div className="pt-4 border-t border-[var(--color-border)] space-y-3">
-                <Link
-                  href="/contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="btn-primary w-full justify-center !py-3.5"
-                >
-                  {t("nav.getQuote")}
-                </Link>
+              <div className="pt-4 border-t border-border space-y-3">
+                <Button variant="primary" size="lg" className="w-full justify-center" asChild>
+                  <Link
+                    href="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {t("nav.getQuote")}
+                  </Link>
+                </Button>
 
-                <a
-                  href="tel:+923321134530"
-                  className="btn-outline w-full justify-center !py-3 !text-xs"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                  Call Desk: 0332-1134530
-                </a>
+                <Button variant="outline" size="default" className="w-full justify-center text-xs" asChild>
+                  <a href="tel:+923321134530">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    Call Desk: 0332-1134530
+                  </a>
+                </Button>
               </div>
             </motion.div>
           </>

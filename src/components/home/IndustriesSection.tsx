@@ -62,12 +62,12 @@ export default function IndustriesSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="section-padding rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 relative z-50 shadow-[0_-15px_40px_rgba(0,0,0,0.06)]" style={{ background: "var(--color-base)" }}>
+    <section className="section-padding rounded-t-[3rem] md:rounded-t-[4rem]   relative z-50 shadow-[0_-15px_40px_rgba(0,0,0,0.06)] bg-base">
       <div className="section-container">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <h2 className="mb-3 text-[var(--color-ink)]">{t("industries.title")}</h2>
-            <p className="text-base max-w-lg mx-auto" style={{ color: "var(--color-neutral)" }}>
+            <h2 className="mb-3 text-ink">{t("industries.title")}</h2>
+            <p className="text-base md:text-lg max-w-lg mx-auto font-semibold text-neutral">
               {t("industries.subtitle")}
             </p>
           </div>
@@ -78,26 +78,20 @@ export default function IndustriesSection() {
             <ScrollReveal key={ind.slug} delay={i * 70} className="h-full w-full">
               <Link
                 href={`/products?industry=${ind.slug}`}
-                className="h-44 w-full flex flex-col items-center justify-center text-center p-5 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] backdrop-blur-xl group cursor-pointer transition-all duration-300 shadow-sm hover:shadow-xl hover:border-[var(--color-primary)] hover:-translate-y-1.5 relative overflow-hidden block"
+                className="h-44 w-full flex flex-col items-center justify-center text-center p-5 rounded-2xl border border-border bg-surface backdrop-blur-xl group cursor-pointer transition-all duration-300 shadow-sm hover:shadow-xl hover:border-primary hover:-translate-y-1.5 relative overflow-hidden block"
               >
                 {/* Arrow indicator on hover */}
-                <div className="absolute top-3.5 right-3.5 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-1 group-hover:translate-x-0 text-[var(--color-primary)]">
+                <div className="absolute top-3.5 right-3.5 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-1 group-hover:translate-x-0 text-primary">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
                   </svg>
                 </div>
 
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-3 shrink-0 transition-all duration-300 group-hover:bg-[var(--color-primary)] group-hover:text-[var(--color-surface)] group-hover:scale-110 shadow-xs"
-                  style={{
-                    background: "rgba(27, 58, 107, 0.06)",
-                    color: "var(--color-primary)",
-                  }}
-                >
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-3 shrink-0 transition-all duration-300 bg-primary/10 text-primary group-hover:bg-primary group-hover:text-surface group-hover:scale-110 shadow-xs">
                   {industryIcons[ind.slug] || industryIcons["general-industrial"]}
                 </div>
-                <h3 className="text-xs sm:text-sm font-bold tracking-tight text-[var(--color-ink)] group-hover:text-[var(--color-primary)] transition-colors px-2 leading-snug">
+                <h3 className="text-xs sm:text-sm font-bold tracking-tight text-ink group-hover:text-primary transition-colors px-2 leading-snug">
                   {ind.name}
                 </h3>
               </Link>

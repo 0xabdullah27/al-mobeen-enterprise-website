@@ -41,7 +41,7 @@ export default function Footer() {
                 Al Mobeen Enterprise
               </span>
             </div>
-            <p className="text-[var(--color-ink)]/80 text-sm leading-relaxed mb-5">
+            <p className="text-ink opacity-80 text-sm leading-relaxed mb-5">
               {t("footer.tagline")}
             </p>
             {/* Social Icons */}
@@ -50,7 +50,7 @@ export default function Footer() {
                 href="https://www.instagram.com/almobeenenterprise"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[var(--color-ink)]/10 text-[var(--color-ink)] flex items-center justify-center transition-all hover:bg-[var(--color-primary)] hover:text-[var(--color-surface)] hover:scale-110"
+                className="w-9 h-9 rounded-full bg-ink/10 text-ink flex items-center justify-center transition-all hover:bg-primary hover:text-surface hover:scale-110"
                 aria-label="Instagram"
                 style={{ transitionDuration: "var(--dur-micro)" }}
               >
@@ -67,7 +67,7 @@ export default function Footer() {
                 href="https://www.facebook.com/almobeenenterprise"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[var(--color-ink)]/10 text-[var(--color-ink)] flex items-center justify-center transition-all hover:bg-[var(--color-primary)] hover:text-[var(--color-surface)] hover:scale-110"
+                className="w-9 h-9 rounded-full bg-ink/10 text-ink flex items-center justify-center transition-all hover:bg-primary hover:text-surface hover:scale-110"
                 aria-label="Facebook"
                 style={{ transitionDuration: "var(--dur-micro)" }}
               >
@@ -85,7 +85,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="font-bold text-xs uppercase tracking-wider mb-4 text-[var(--color-ink)]">
+            <h3 className="font-bold text-xs uppercase tracking-wider mb-4 text-ink">
               {t("footer.quickLinks")}
             </h3>
             <ul className="space-y-2.5">
@@ -93,7 +93,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[var(--color-ink)]/80 text-sm font-medium hover:text-[var(--color-primary)] transition-colors"
+                    className="text-ink opacity-80 text-sm font-medium hover:text-primary transition-colors"
                     style={{ transitionDuration: "var(--dur-micro)" }}
                   >
                     {link.label}
@@ -105,7 +105,7 @@ export default function Footer() {
 
           {/* Column 3: Product Categories */}
           <div>
-            <h3 className="font-bold text-xs uppercase tracking-wider mb-4 text-[var(--color-ink)]">
+            <h3 className="font-bold text-xs uppercase tracking-wider mb-4 text-ink">
               {t("footer.categories")}
             </h3>
             <ul className="space-y-2.5">
@@ -113,7 +113,7 @@ export default function Footer() {
                 <li key={cat.slug}>
                   <Link
                     href={`/products?category=${cat.slug}`}
-                    className="text-[var(--color-ink)]/80 text-sm font-medium hover:text-[var(--color-primary)] transition-colors flex items-center gap-2"
+                    className="text-ink opacity-80 text-sm font-medium hover:text-primary transition-colors flex items-center gap-2"
                     style={{ transitionDuration: "var(--dur-micro)" }}
                   >
                     <span
@@ -129,10 +129,10 @@ export default function Footer() {
 
           {/* Column 4: Contact Info */}
           <div>
-            <h3 className="font-bold text-xs uppercase tracking-wider mb-4 text-[var(--color-ink)]">
+            <h3 className="font-bold text-xs uppercase tracking-wider mb-4 text-ink">
               {t("footer.contactInfo")}
             </h3>
-            <div className="space-y-3 text-sm text-[var(--color-ink)]/85 font-medium">
+            <div className="space-y-3 text-sm text-ink opacity-85 font-medium">
               <p className="leading-relaxed">
                 G/9, Golden Center, Weaver Lane,
                 <br />
@@ -141,7 +141,7 @@ export default function Footer() {
               <div className="space-y-1.5">
                 <a
                   href="tel:+923321134530"
-                  className="flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
                 >
                   <svg
                     width="14"
@@ -159,7 +159,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="tel:+923002268847"
-                  className="flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
                 >
                   <svg
                     width="14"
@@ -177,7 +177,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="tel:+923152703824"
-                  className="flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
                 >
                   <svg
                     width="14"
@@ -196,7 +196,7 @@ export default function Footer() {
               </div>
               <a
                 href="mailto:almobeenenterprise@gmail.com"
-                className="flex items-center gap-2 hover:text-[var(--color-primary)] transition-colors"
+                className="flex items-center gap-2 hover:text-primary transition-colors"
               >
                 <svg
                   width="14"
@@ -213,14 +213,14 @@ export default function Footer() {
                 </svg>
                 almobeenenterprise@gmail.com
               </a>
-              <p className="text-[var(--color-ink)]/70 text-xs mt-3 font-semibold">
+              <p className="text-ink opacity-70 text-xs mt-3 font-semibold">
                 9:00 AM – 6:00 PM
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-[var(--color-border)] text-center text-[var(--color-ink)]/70 text-xs font-semibold">
+        <div className="mt-12 pt-6 border-t border-border text-center text-ink opacity-70 text-xs font-semibold">
           {t("footer.rights")}
         </div>
       </div>

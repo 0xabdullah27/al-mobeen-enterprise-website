@@ -68,7 +68,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   };
 
   return (
-    <div className="pt-28 pb-20 bg-[var(--color-base)] min-h-screen">
+    <div className="pt-28 pb-20 bg-base min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -76,7 +76,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
       <div className="section-container">
         {/* Breadcrumb */}
-        <div style={{ color: "#1b263b" }} className="mb-6 flex items-center gap-2 text-xs font-bold">
+        <div className="mb-6 flex items-center gap-2 text-xs font-bold text-ink">
           <Link href="/" className="hover:underline">Home</Link>
           <span>/</span>
           <Link href="/products" className="hover:underline">Products</Link>
@@ -89,14 +89,14 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               <span>/</span>
             </>
           )}
-          <span style={{ color: "#0d1b2a" }} className="font-extrabold">{product.displayName}</span>
+          <span className="font-extrabold text-ink">{product.displayName}</span>
         </div>
 
         {/* Detail Card */}
-        <div className="bg-[var(--color-surface)] text-[var(--color-ink)] rounded-3xl border border-[var(--color-border)] p-6 md:p-10 shadow-sm mb-16">
+        <div className="bg-surface text-ink rounded-3xl border border-border p-6 md:p-10 shadow-sm mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
             {/* Visual Icon Column */}
-            <div className="lg:col-span-5 flex flex-col items-center justify-center p-12 rounded-2xl bg-[var(--color-base)] border border-[var(--color-border)] relative">
+            <div className="lg:col-span-5 flex flex-col items-center justify-center p-12 rounded-2xl bg-base border border-border relative">
               <CategoryIcon category={product.category} size={120} />
               {product.bestSeller && (
                 <span className="absolute top-4 right-4 badge-bestseller">
@@ -108,24 +108,24 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             {/* Info Column */}
             <div className="lg:col-span-7">
               {category && (
-                <span className="inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-[var(--color-base)] border border-[var(--color-border)] text-[var(--color-ink)] mb-3">
+                <span className="inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-base border border-border text-ink mb-3">
                   <span className="category-dot" style={{ background: category.tintColor }} />
                   {category.name}
                 </span>
               )}
 
-              <h1 style={{ color: "#0d1b2a" }} className="text-2xl md:text-4xl font-black mb-4">
+              <h1 className="text-2xl md:text-4xl font-black mb-4 text-ink">
                 {product.displayName}
               </h1>
 
-              <p style={{ color: "#283747" }} className="text-base font-medium leading-relaxed mb-6">
+              <p className="text-base font-medium leading-relaxed mb-6 text-ink opacity-85">
                 {product.description}
               </p>
 
               {/* Industries tags */}
               {productIndustries.length > 0 && (
                 <div className="mb-8">
-                  <h4 style={{ color: "#1b263b" }} className="text-xs font-extrabold uppercase tracking-wider mb-3">
+                  <h4 className="text-xs font-extrabold uppercase tracking-wider mb-3 text-ink">
                     Primary Industry Applications
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -133,7 +133,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                       <Link
                         key={ind!.slug}
                         href={`/products?industry=${ind!.slug}`}
-                        className="px-3 py-1 rounded-lg text-xs font-bold bg-[var(--color-base)] border border-[var(--color-border)] text-[var(--color-ink)] hover:border-[var(--color-primary)] transition-colors"
+                        className="px-3 py-1 rounded-lg text-xs font-bold bg-base border border-border text-ink hover:border-primary transition-colors"
                       >
                         {ind!.name}
                       </Link>
@@ -151,7 +151,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         {/* Related Products */}
         {relatedProducts.length > 0 && (
           <div>
-            <h2 style={{ color: "#0d1b2a" }} className="text-xl md:text-2xl font-black mb-6">
+            <h2 className="text-xl md:text-2xl font-black mb-6 text-ink">
               You May Also Need
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

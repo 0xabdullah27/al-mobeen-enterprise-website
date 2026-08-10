@@ -7,7 +7,7 @@ const reasons = [
   {
     titleKey: "why.experience.title",
     textKey: "why.experience.text",
-    gradient: "from-[var(--color-primary)] to-[var(--color-accent)]",
+    gradient: "from-primary to-accent",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -18,7 +18,7 @@ const reasons = [
   {
     titleKey: "why.sourcing.title",
     textKey: "why.sourcing.text",
-    gradient: "from-[var(--color-primary)] to-[var(--color-accent)]",
+    gradient: "from-primary to-accent",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
@@ -29,7 +29,7 @@ const reasons = [
   {
     titleKey: "why.bulk.title",
     textKey: "why.bulk.text",
-    gradient: "from-[var(--color-primary)] to-[var(--color-accent)]",
+    gradient: "from-primary to-accent",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1" y="6" width="22" height="16" rx="2" />
@@ -42,7 +42,7 @@ const reasons = [
   {
     titleKey: "why.jodiabazar.title",
     textKey: "why.jodiabazar.text",
-    gradient: "from-[var(--color-primary)] to-[var(--color-accent)]",
+    gradient: "from-primary to-accent",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
   const { t } = useLanguage();
 
   return (
-    <section className="section-padding bg-[var(--color-surface)] relative overflow-hidden rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 z-[60] shadow-[0_-15px_40px_rgba(0,0,0,0.06)]">
+    <section className="section-padding bg-surface relative overflow-hidden rounded-t-[3rem] md:rounded-t-[4rem]  z-60 shadow-[0_-15px_40px_rgba(0,0,0,0.06)]">
       <div className="section-container relative z-10">
         <div className="text-center mb-14">
           <motion.h2
@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-black mb-4 tracking-tight text-[var(--color-ink)]"
+            className="text-3xl md:text-5xl font-black mb-4 tracking-tight text-ink"
           >
             {t("why.title")}
           </motion.h2>
@@ -74,7 +74,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg max-w-2xl mx-auto font-extrabold text-[var(--color-ink)]/90"
+            className=" md:text-lg max-w-2xl mx-auto font-semibold text-neutral"
           >
             {t("why.subtitle")}
           </motion.p>
@@ -89,18 +89,18 @@ export default function WhyChooseUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -6 }}
-              className="group relative rounded-3xl border border-[var(--color-border)] bg-[var(--color-base)] p-6 shadow-sm hover:shadow-xl hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between"
+              className="group relative rounded-3xl border border-border bg-base p-6 shadow-sm hover:shadow-xl hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-[var(--color-primary)] text-inverse-ink flex items-center justify-center mb-5 shadow-md">
+                <div className="w-12 h-12 rounded-2xl bg-primary text-inverse-ink flex items-center justify-center mb-5 shadow-md">
                   {reason.icon}
                 </div>
 
-                <h3 className="text-base font-extrabold mb-2.5 text-[var(--color-ink)]">
+                <h3 className="text-base font-extrabold mb-2.5 text-ink">
                   {t(reason.titleKey)}
                 </h3>
 
-                <p className="text-xs leading-relaxed font-medium text-[var(--color-ink)]/85">
+                <p className="text-xs leading-relaxed font-medium text-ink opacity-85">
                   {t(reason.textKey)}
                 </p>
               </div>

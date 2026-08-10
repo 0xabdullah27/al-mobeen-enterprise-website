@@ -13,7 +13,7 @@ export const categories: Category[] = [
     description:
       "Industrial-grade solvents and glycols for manufacturing, cleaning, and chemical processing applications.",
     icon: "droplet",
-    tintColor: "#3B82F6",
+    tintColor: "var(--tint-solvents)",
   },
   {
     name: "Plasticizers",
@@ -21,7 +21,7 @@ export const categories: Category[] = [
     description:
       "Plasticizer compounds — primarily DOP — used to increase flexibility and durability of PVC and other polymers.",
     icon: "layers",
-    tintColor: "#8B5CF6",
+    tintColor: "var(--tint-plasticizers)",
   },
   {
     name: "Pigments & Dyes",
@@ -29,7 +29,7 @@ export const categories: Category[] = [
     description:
       "A wide range of organic and inorganic pigments and dyes for paints, inks, textiles, and plastics.",
     icon: "palette",
-    tintColor: "#EC4899",
+    tintColor: "var(--tint-pigments)",
   },
   {
     name: "Titanium Dioxide & White Pigments / Fillers",
@@ -37,7 +37,7 @@ export const categories: Category[] = [
     description:
       "High-opacity white pigments and industrial fillers used across paints, coatings, plastics, and paper.",
     icon: "sun",
-    tintColor: "#F59E0B",
+    tintColor: "var(--tint-titanium)",
   },
   {
     name: "Resins & Binders",
@@ -45,7 +45,7 @@ export const categories: Category[] = [
     description:
       "Synthetic and natural resins for adhesive, coating, and binding applications in manufacturing.",
     icon: "hexagon",
-    tintColor: "#10B981",
+    tintColor: "var(--tint-resins)",
   },
   {
     name: "Acids & Specialty Chemicals",
@@ -53,7 +53,7 @@ export const categories: Category[] = [
     description:
       "Industrial acids and specialty chemicals for metal treatment, water treatment, and chemical synthesis.",
     icon: "flask",
-    tintColor: "#EF4444",
+    tintColor: "var(--tint-acids)",
   },
   {
     name: "Other Industrial Chemicals",
@@ -61,7 +61,7 @@ export const categories: Category[] = [
     description:
       "General-purpose industrial chemicals including waxes, powders, and processing aids for various manufacturing needs.",
     icon: "box",
-    tintColor: "#6366F1",
+    tintColor: "var(--tint-other)",
   },
 ];
 

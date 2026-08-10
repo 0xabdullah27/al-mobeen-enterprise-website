@@ -90,7 +90,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[var(--color-base)] text-[var(--color-ink)] transition-colors duration-300 relative">
+      <body className="min-h-screen flex flex-col bg-base text-ink transition-colors duration-300 relative">
         <SmoothScrollProvider>
           <ThemeProvider>
             <LanguageProvider>

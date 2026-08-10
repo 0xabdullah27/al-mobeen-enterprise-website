@@ -22,12 +22,12 @@ export default function ScrollAmbientElements() {
         transition={{
           x: { duration: 6, repeat: Infinity, ease: "easeInOut" },
         }}
-        className="absolute top-1/3 left-6 w-28 h-28 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/5 backdrop-blur-2xs flex items-center justify-center shadow-lg"
+        className="absolute top-1/3 left-6 w-28 h-28 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-2xs flex items-center justify-center shadow-lg"
       >
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[var(--color-primary)]/40">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-primary/40">
           <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
         </svg>
-        <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-[var(--color-primary)]/40 animate-ping" />
+        <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-primary/40 animate-ping" />
       </motion.div>
 
       {/* Right Floating Chemical Orbital Gear */}
@@ -39,14 +39,14 @@ export default function ScrollAmbientElements() {
         transition={{
           x: { duration: 7, repeat: Infinity, ease: "easeInOut" },
         }}
-        className="absolute top-2/3 right-6 w-32 h-32 rounded-full border border-[var(--color-accent)]/20 bg-[var(--color-accent)]/5 backdrop-blur-2xs flex items-center justify-center shadow-lg"
+        className="absolute top-2/3 right-6 w-32 h-32 rounded-full border border-accent/20 bg-accent/5 backdrop-blur-2xs flex items-center justify-center shadow-lg"
       >
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[var(--color-accent)]/40">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent/40">
           <circle cx="12" cy="12" r="10" />
           <path d="M12 16v-4" />
           <path d="M12 8h.01" />
         </svg>
-        <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-[var(--color-accent)]/40 animate-ping" />
+        <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-accent/40 animate-ping" />
       </motion.div>
     </div>
   );

@@ -37,36 +37,36 @@ export default async function IndustryDetailPage({ params }: IndustryPageProps) 
   const industryProducts = getProductsByIndustry(industry.slug);
 
   return (
-    <div className="pt-28 pb-20 bg-[var(--color-base)] min-h-screen">
+    <div className="pt-28 pb-20 bg-base min-h-screen">
       <div className="section-container">
         {/* Breadcrumb */}
-        <div style={{ color: "#1b263b" }} className="mb-6 flex items-center gap-2 text-xs font-bold">
+        <div className="mb-6 flex items-center gap-2 text-xs font-bold text-ink">
           <Link href="/" className="hover:underline">Home</Link>
           <span>/</span>
           <Link href="/industries" className="hover:underline">Industries</Link>
           <span>/</span>
-          <span style={{ color: "#0d1b2a" }} className="font-extrabold">{industry.name}</span>
+          <span className="font-extrabold text-ink">{industry.name}</span>
         </div>
 
         {/* Industry Banner */}
-        <div className="bg-[var(--color-surface)] text-[var(--color-ink)] rounded-3xl border border-[var(--color-border)] p-8 md:p-12 mb-12 shadow-sm">
-          <p className="text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--color-accent)] mb-2">
+        <div className="bg-surface text-ink rounded-3xl border border-border p-8 md:p-12 mb-12 shadow-sm">
+          <p className="text-xs font-extrabold uppercase tracking-[0.15em] text-accent mb-2">
             Industrial Sector
           </p>
-          <h1 style={{ color: "#0d1b2a" }} className="text-3xl md:text-5xl font-extrabold mb-4">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-4 text-ink">
             Chemicals for {industry.name}
           </h1>
-          <p style={{ color: "#283747" }} className="text-base font-medium leading-relaxed max-w-3xl mb-6">
+          <p className="text-base font-medium leading-relaxed max-w-3xl mb-6 text-ink opacity-85">
             {industry.description}
           </p>
-          <div style={{ color: "#0d1b2a" }} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--color-base)] border border-[var(--color-border)] text-xs font-extrabold">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-base border border-border text-xs font-extrabold text-ink">
             <span>Available Products: {industryProducts.length}</span>
           </div>
         </div>
 
         {/* Products Grid */}
         <div className="mt-16">
-          <h2 style={{ color: "#0d1b2a" }} className="text-xl md:text-2xl font-extrabold mb-6">
+          <h2 className="text-xl md:text-2xl font-extrabold mb-6 text-ink">
             Popular Products for {industry.name}
           </h2>
 
@@ -77,7 +77,7 @@ export default async function IndustryDetailPage({ params }: IndustryPageProps) 
               ))}
             </div>
           ) : (
-            <p style={{ color: "#283747" }} className="text-sm font-medium">
+            <p className="text-sm font-medium text-ink opacity-85">
               No specific products tagged for this sector currently. Browse our full catalog.
             </p>
           )}

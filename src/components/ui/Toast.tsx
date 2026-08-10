@@ -35,10 +35,9 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       {toast && (
         <div
           key={toast.id}
-          className={`fixed bottom-6 left-1/2 z-[100] px-5 py-3 rounded-xl shadow-lg text-sm font-medium text-inverse-ink ${
+          className={`fixed bottom-6 left-1/2 z-[100] px-5 py-3 rounded-xl shadow-lg text-sm font-medium text-inverse-ink bg-primary ${
             isExiting ? "toast-exit" : "toast-enter"
           }`}
-          style={{ background: "var(--color-primary)" }}
           role="status"
           aria-live="polite"
         >

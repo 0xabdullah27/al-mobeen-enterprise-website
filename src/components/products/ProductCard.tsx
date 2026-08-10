@@ -7,6 +7,7 @@ import CategoryIcon from "@/components/ui/CategoryIcon";
 import { useQuote } from "@/components/QuoteProvider";
 import { useToast } from "@/components/ui/Toast";
 import { useLanguage } from "@/components/LanguageProvider";
+import { Button } from "@/components/ui/button";
 
 interface ProductCardProps {
   product: Product;
@@ -32,12 +33,12 @@ export default function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <div className="group min-w-0 relative flex flex-col justify-between rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 shadow-sm hover:shadow-md hover:border-[var(--color-primary)]/40 transition-all duration-200">
+    <div className="group min-w-0 relative flex flex-col justify-between rounded-2xl border border-border bg-surface p-5 shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-200">
       <div className="min-w-0">
         {/* Header Badges */}
         <div className="flex items-center justify-between gap-2 mb-3">
           {category && (
-            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[var(--color-ink)]">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-ink">
               <span
                 className="category-dot"
                 style={{ background: category.tintColor }}
@@ -51,13 +52,13 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Icon / Technical Box */}
-        <div className="flex items-center justify-between p-4 rounded-xl mb-4 bg-[var(--color-base)] border border-[var(--color-border)]">
+        <div className="flex items-center justify-between p-4 rounded-xl mb-4 bg-base border border-border">
           <CategoryIcon category={product.category} size={42} />
           <div className="text-right">
-            <span style={{ color: "#1b263b" }} className="text-[10px] font-extrabold uppercase block">
+            <span className="text-[10px] font-extrabold uppercase block text-neutral">
               Packaging
             </span>
-            <span style={{ color: "#0d1b2a" }} className="text-xs font-black block">
+            <span className="text-xs font-black block text-ink">
               {product.packaging}
             </span>
           </div>
@@ -65,8 +66,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Title */}
         <h3 
-          style={{ color: "#0d1b2a" }}
-          className="text-sm font-black mb-1.5 group-hover:text-[var(--color-primary)] transition-colors break-words hyphens-auto line-clamp-2"
+          className="text-sm font-black mb-1.5 text-ink group-hover:text-primary transition-colors break-words hyphens-auto line-clamp-2"
           title={product.displayName}
         >
           <Link href={`/products/${product.slug}`}>
@@ -76,28 +76,28 @@ export default function ProductCard({ product }: ProductCardProps) {
         </h3>
 
         {/* Grade & Purity Sub-specs */}
-        <div className="flex items-center gap-2 mb-3 text-[11px] text-[var(--color-ink)] font-bold">
-          <span className="px-2 py-0.5 rounded bg-[var(--color-base)] border border-[var(--color-border)]">
+        <div className="flex items-center gap-2 mb-3 text-[11px] text-ink font-bold">
+          <span className="px-2 py-0.5 rounded bg-base border border-border">
             {product.grade}
           </span>
           {product.purity && (
-            <span className="px-2 py-0.5 rounded bg-[var(--color-base)] border border-[var(--color-border)]">
+            <span className="px-2 py-0.5 rounded bg-base border border-border">
               {product.purity}
             </span>
           )}
         </div>
 
         {/* Description */}
-        <p style={{ color: "#283747" }} className="text-xs leading-relaxed font-medium line-clamp-2 mb-4">
+        <p className="text-xs leading-relaxed font-medium text-neutral-light line-clamp-2 mb-4">
           {product.description}
         </p>
       </div>
 
       {/* Footer Actions */}
-      <div className="relative z-10 pt-3 border-t border-[var(--color-border)] flex items-center justify-between gap-2">
+      <div className="relative z-10 pt-3 border-t border-border flex items-center justify-between gap-2">
         <Link
           href={`/products/${product.slug}`}
-          className="text-xs font-bold text-[var(--color-primary)] hover:underline inline-flex items-center gap-1"
+          className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1"
         >
           {t("products.viewDetails")}
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -105,13 +105,11 @@ export default function ProductCard({ product }: ProductCardProps) {
           </svg>
         </Link>
 
-        <button
+        <Button
           onClick={handleQuoteToggle}
-          className={`px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm ${
-            isAdded
-              ? "bg-success text-inverse-ink"
-              : "bg-[var(--color-primary)] text-inverse-ink hover:bg-[var(--color-primary-light)]"
-          }`}
+          variant={isAdded ? "success" : "default"}
+          size="sm"
+          className="px-3.5 py-1.5 font-bold"
           aria-label={isAdded ? `Remove ${product.displayName} from Quote List` : `Add ${product.displayName} to Quote List`}
         >
           {isAdded ? (
@@ -130,7 +128,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               <span>Quote</span>
             </>
           )}
-        </button>
+        </Button>
       </div>
     </div>
   );

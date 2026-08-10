@@ -75,19 +75,14 @@ export default function StatsStrip() {
   return (
     <section
       ref={ref}
-      className="relative rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 z-10 shadow-[0_-15px_40px_rgba(0,0,0,0.06)]"
-      style={{
-        borderColor: "var(--color-border)",
-        background: "var(--color-surface)",
-      }}
+      className="relative rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 z-10 shadow-[0_-15px_40px_rgba(0,0,0,0.06)] bg-surface border border-border pb-12"
     >
       <div className="section-container py-8 md:py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
           {stats.map((stat, i) => (
             <div key={stat.labelKey} className="text-center">
               <p
-                className="text-3xl md:text-4xl font-bold font-tabular mb-1"
-                style={{ color: "var(--color-primary)" }}
+                className="text-3xl md:text-4xl font-bold font-tabular mb-1 text-primary"
               >
                 {stat.isNumeric ? (
                   <>
@@ -101,8 +96,7 @@ export default function StatsStrip() {
                 )}
               </p>
               <p
-                className="text-sm font-medium"
-                style={{ color: "var(--color-neutral)" }}
+                className="text-sm font-medium text-neutral"
               >
                 {t(stat.labelKey)}
               </p>
