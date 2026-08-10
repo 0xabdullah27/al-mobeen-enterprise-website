@@ -75,7 +75,7 @@ export default function StatsStrip() {
   return (
     <section
       ref={ref}
-      className="relative border-y"
+      className="relative rounded-t-[3rem] md:rounded-t-[4rem] -mt-10 md:-mt-14 z-10 border-t shadow-[0_-15px_40px_rgba(0,0,0,0.06)]"
       style={{
         borderColor: "var(--color-border)",
         background: "var(--color-surface)",
