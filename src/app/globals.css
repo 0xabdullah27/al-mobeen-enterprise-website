@@ -58,20 +58,20 @@ html.dark {
   --color-base: #0d1b2a; /* Rich Black */
   --color-ink: #f0f2f5; /* Bright Platinum */
   --color-primary: #778da9; /* Shadow Blue */
-  --color-primary-light: #e0e1dd;
+  --color-primary-light: #415a77;
   --color-accent: #778da9;
   --color-accent-hover: #e0e1dd;
   --color-amber: #778da9;
-  --color-neutral: #c5cbd3; /* High contrast silver-blue */
-  --color-neutral-light: #778da9;
-  --color-border: #263550;
-  --color-surface: #1b263b; /* Dark Oxford Blue */
-  --color-surface-hover: #263550;
+  --color-neutral: #c5cbd3; /* High contrast light grey in dark mode */
+  --color-neutral-light: #8b96a5;
+  --color-border: #1b263b;
+  --color-surface: #112233;
+  --color-surface-hover: #1b263b;
 
   --color-success: #10B981;
   --color-danger: #EF4444;
   --color-warning: #F59E0B;
-  --color-inverse-base: #e0e1dd;
+  --color-inverse-base: #ffffff;
   --color-inverse-ink: #0d1b2a;
 
   --tint-solvents: #778da9;
@@ -88,6 +88,16 @@ html.dark {
 
   --background: var(--color-base);
   --foreground: var(--color-ink);
+}
+
+/* Ensure all solid inline light-theme dark text turns bright platinum in dark mode */
+html.dark [style*="color: #0d1b2a"],
+html.dark [style*="color: #1b263b"],
+html.dark [style*="color: #283747"],
+html.dark [style*="color:#0d1b2a"],
+html.dark [style*="color:#1b263b"],
+html.dark [style*="color:#283747"] {
+  color: #f0f2f5 !important;
 }
 
 /* ─── Tailwind v4 Theme Inline ─── */
