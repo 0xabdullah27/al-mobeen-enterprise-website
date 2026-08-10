@@ -94,7 +94,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                   <Navbar />
                   <main className="flex-1 relative z-10">{children}</main>
                   <Footer />
-                  <WhatsAppButton />
                   <ChemicalMascotWidget />
                   <ScrollProgressWidget />
                   <QuoteListDrawer />
