@@ -13,7 +13,7 @@ const buttonVariants = cva(
         primary:
           "btn-primary",
         outline:
-          "border-2 border-primary-light/60 dark:border-accent bg-transparent text-ink hover:bg-ink hover:text-inverse-ink hover:border-ink dark:hover:bg-ink dark:hover:text-inverse-ink dark:hover:border-ink hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 shadow-xs",
+          "btn-outline",
         secondary:
           "bg-surface text-ink border border-border shadow-xs hover:bg-surface-hover hover:-translate-y-0.5",
         ghost:
