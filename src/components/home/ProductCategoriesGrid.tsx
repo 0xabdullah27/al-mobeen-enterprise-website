@@ -26,7 +26,7 @@ export default function ProductCategoriesGrid() {
             viewport={{ once: true }}
             className="text-xs font-black uppercase tracking-[0.2em] mb-2 text-primary"
           >
-            Explore Portfolio
+            {t("categories.eyebrow")}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -83,7 +83,7 @@ export default function ProductCategoriesGrid() {
 
                 <div className="relative z-10 flex items-center justify-between w-full mt-auto pt-4 border-t border-border/20 group-hover:border-border/40 transition-colors">
                   <span className="inline-flex items-center gap-2 text-sm font-bold text-primary group-hover:text-accent transition-colors">
-                    Explore Category
+                    {t("categories.explore")}
                   </span>
                   <div className="w-10 h-10 rounded-full bg-base flex items-center justify-center group-hover:bg-primary group-hover:text-surface text-primary transition-all duration-300 shadow-sm">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

@@ -16,7 +16,7 @@ export default function AboutSnapshot() {
           <ScrollReveal>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.15em] mb-3 text-accent">
-                Since 1995
+                {t("about.since1995")}
               </p>
               <h2 className="mb-5">{t("about.snippet.title")}</h2>
               <p className="font-medium leading-relaxed mb-6 text-neutral">

@@ -185,7 +185,7 @@ function ProductCatalogContent() {
         <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-border">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs font-extrabold uppercase tracking-wider text-ink">
-              Showing <strong>{filteredProducts.length}</strong> items
+              {t("products.showing")} <strong>{filteredProducts.length}</strong> {t("products.items")}
             </span>
             {selectedCategory && (
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-primary/10 text-primary font-bold border border-primary/20">
@@ -212,7 +212,7 @@ function ProductCatalogContent() {
               onClick={clearAllFilters}
               className="text-xs font-extrabold text-danger hover:underline"
             >
-              Clear All Filters
+              {t("products.clearFilters")}
             </button>
           )}
         </div>
@@ -232,11 +232,11 @@ function ProductCatalogContent() {
             <table className="w-full text-left text-xs text-ink">
               <thead className="bg-base border-b border-border uppercase text-[10px] font-extrabold tracking-wider text-neutral">
                 <tr>
-                  <th className="py-3.5 px-4">Chemical Name</th>
-                  <th className="py-3.5 px-4">Category</th>
-                  <th className="py-3.5 px-4">Packaging Spec</th>
-                  <th className="py-3.5 px-4">Grade / Purity</th>
-                  <th className="py-3.5 px-4 text-right">Action</th>
+                  <th className="py-3.5 px-4">{t("products.tableName")}</th>
+                  <th className="py-3.5 px-4">{t("products.tableCategory")}</th>
+                  <th className="py-3.5 px-4">{t("products.tablePackaging")}</th>
+                  <th className="py-3.5 px-4">{t("products.tableGrade")}</th>
+                  <th className="py-3.5 px-4 text-right">{t("products.tableAction")}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -251,7 +251,7 @@ function ProductCatalogContent() {
                         </Link>
                         {p.bestSeller && (
                           <span className="ml-2 text-[9px] font-extrabold uppercase px-1.5 py-0.2 rounded bg-warning text-inverse-ink">
-                            Best Seller
+                            {t("products.bestSeller")}
                           </span>
                         )}
                       </td>
@@ -274,7 +274,7 @@ function ProductCatalogContent() {
                           size="sm"
                           className="px-3 py-1.5 text-[11px] font-bold"
                         >
-                          {added ? "✓ Added" : "+ Quote"}
+                          {added ? t("visualizer.added") : t("visualizer.addQuote")}
                         </Button>
                       </td>
                     </tr>
@@ -286,12 +286,12 @@ function ProductCatalogContent() {
         )
       ) : (
         <div className="text-center py-16 px-4 bg-surface rounded-2xl border border-border">
-          <h3 className="text-lg font-bold mb-2">No matching chemical items</h3>
+          <h3 className="text-lg font-bold mb-2">{t("products.noMatching")}</h3>
           <p className="text-sm text-neutral max-w-sm mx-auto mb-6">
-            We couldn&apos;t find any products matching your current filters.
+            {t("products.noMatchingSub")}
           </p>
           <Button onClick={clearAllFilters} variant="primary" size="default">
-            Reset Filters
+            {t("products.resetFilters")}
           </Button>
         </div>
       )}

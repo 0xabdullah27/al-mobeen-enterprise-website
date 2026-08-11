@@ -18,28 +18,45 @@ export const translations: Record<string, TranslationRecord> = {
   "nav.getQuote": { en: "Get a Quote", romanUrdu: "Quote Lein", urdu: "قیمت حاصل کریں" },
 
   // ─── Hero ───
-  "hero.eyebrow": {
-    en: "30 Years in Jodia Bazar, Karachi",
-    romanUrdu: "30 Saal Jodia Bazar, Karachi Mein",
-    urdu: "30 سال جوڈیا بازار، کراچی میں",
+  "hero.badge": {
+    en: "Sole Proprietorship • Est. 1995 • Jodia Bazar, Karachi",
+    romanUrdu: "Sole Proprietorship • Qaim 1995 • Jodia Bazar, Karachi",
+    urdu: "سول پروپرائٹر شپ • قائم 1995 • جوڈیا بازار، کراچی",
   },
-  "hero.title": {
-    en: "Al Mobeen Enterprise",
-    romanUrdu: "Al Mobeen Enterprise",
-    urdu: "المبین انٹرپرائز",
+  "hero.headline": {
+    en: "Bulk Chemical Supply from Pakistan's Trading Hub",
+    romanUrdu: "Pakistan ke Trading Hub se Bulk Chemical Supply",
+    urdu: "پاکستان کے ٹریڈنگ ہب سے بلک کیمیکل سپلائی",
   },
-  "hero.tagline": {
-    en: "Trusted Bulk Chemical Distributor, Serving Pakistan Since 1995",
-    romanUrdu: "Qabil-e-Aitemaad Bulk Chemical Distributor, 1995 Se Pakistan Ki Khidmat Mein",
-    urdu: "قابل اعتماد بلک کیمیکل ڈسٹریبیوٹر، 1995 سے پاکستان کی خدمت میں",
+  "hero.subtitleText": {
+    en: "Al Mobeen Enterprise sources high-grade industrial solvents, plasticizers, pigments, resins, and acids directly from established importers and tier-1 dealers across Pakistan.",
+    romanUrdu: "Al Mobeen Enterprise aala miyaar ke industrial solvents, plasticizers, pigments, resins, aur acids Pakistan ke importers aur dealers se direct source karta hai.",
+    urdu: "المبین انٹرپرائز اعلیٰ معیار کے صنعتی سالوینٹس، پلاسٹائزر، پگمنٹس، ریزنز اور ایسڈز براہ راست پاکستان کے امپورٹرز اور ڈیلرز سے سورس کرتا ہے۔",
   },
-  "hero.subtitle": {
-    en: "Reliable sourcing of industrial chemicals in bulk from Pakistan's leading importers and dealers.",
-    romanUrdu: "Pakistan ke bade importers aur dealers se bulk industrial chemicals ki bharosemand sourcing.",
-    urdu: "پاکستان کے بڑے امپورٹرز اور ڈیلرز سے بلک صنعتی کیمیکلز کی بھروسہ مند سورسنگ۔",
+  "hero.cta.catalog": {
+    en: "Browse 80+ Chemical Catalog",
+    romanUrdu: "80+ Chemicals Catalog Dekhein",
+    urdu: "80+ کیمیکلز کا کیٹلاگ دیکھیں",
   },
-  "hero.cta.quote": { en: "Request a Quote", romanUrdu: "Quote Ka Talab Karein", urdu: "قیمت کی درخواست کریں" },
-  "hero.cta.whatsapp": { en: "Chat on WhatsApp", romanUrdu: "WhatsApp Par Baat Karein", urdu: "واٹس ایپ پر بات کریں" },
+  "hero.cta.whatsappDesk": {
+    en: "WhatsApp Desk",
+    romanUrdu: "WhatsApp Desk",
+    urdu: "واٹس ایپ ڈیسک",
+  },
+  "hero.stat1.title": { en: "30 Years", romanUrdu: "30 Saal", urdu: "30 سال" },
+  "hero.stat1.sub": { en: "In Jodia Bazar", romanUrdu: "Jodia Bazar Mein", urdu: "جوڈیا بازار میں" },
+  "hero.stat2.title": { en: "80+ Items", romanUrdu: "80+ Items", urdu: "80+ اشیاء" },
+  "hero.stat2.sub": { en: "Ready Sourcing", romanUrdu: "Tayyar Sourcing", urdu: "تیار سورسنگ" },
+  "hero.stat3.title": { en: "7 Sectors", romanUrdu: "7 Sectors", urdu: "7 شعبے" },
+  "hero.stat3.sub": { en: "Nationwide Focus", romanUrdu: "Mulk Bhar Mein", urdu: "ملک بھر میں" },
+
+  // ─── 3D Visualizer ───
+  "visualizer.badge": { en: "Bulk Spec Visualizer", romanUrdu: "Bulk Spec Visualizer", urdu: "بلک سپیک ویژولائزر" },
+  "visualizer.title": { en: "Industrial Drum & Spec Finder", romanUrdu: "Industrial Drum & Spec Finder", urdu: "انڈسٹریل ڈرم اور سپیک فائنڈر" },
+  "visualizer.sub": { en: "Jodia Trading Desk Stock", romanUrdu: "Jodia Trading Desk Stock", urdu: "جوڈیا ٹریڈنگ ڈیسک اسٹاک" },
+  "visualizer.placeholder": { en: "Search e.g. DOP, Titanium, Xylene, MEG...", romanUrdu: "Talash karein e.g. DOP, Titanium, Xylene, MEG...", urdu: "تلاش کریں مثلاً ڈی او پی، ٹائٹینیم، زائلین..." },
+  "visualizer.added": { en: "✓ Added", romanUrdu: "✓ Shamil Hua", urdu: "✓ شامل ہو گیا" },
+  "visualizer.addQuote": { en: "+ Quote", romanUrdu: "+ Quote", urdu: "+ قیمت" },
 
   // ─── Stats ───
   "stats.years": { en: "Years in Business", romanUrdu: "Saal Ka Tajurba", urdu: "سالوں کا تجربہ" },
@@ -49,6 +66,7 @@ export const translations: Record<string, TranslationRecord> = {
   "stats.nationwide": { en: "Nationwide", romanUrdu: "Mulk Bhar Mein", urdu: "ملک بھر میں" },
 
   // ─── About Snapshot ───
+  "about.since1995": { en: "Since 1995", romanUrdu: "1995 Se", urdu: "1995 سے" },
   "about.snippet.title": {
     en: "Three Decades of Trusted Chemical Supply",
     romanUrdu: "Teen Dashak Se Bharosemand Chemical Supply",
@@ -61,15 +79,22 @@ export const translations: Record<string, TranslationRecord> = {
   },
 
   // ─── Product Categories ───
+  "categories.eyebrow": { en: "Explore Portfolio", romanUrdu: "Portfolio Dekhein", urdu: "پورٹ فولیو دیکھیں" },
   "categories.title": { en: "Product Categories", romanUrdu: "Product Categories", urdu: "مصنوعات کی اقسام" },
   "categories.subtitle": {
     en: "Explore our range of industrial chemicals across seven major categories.",
     romanUrdu: "Sat badi categories mein hamare industrial chemicals dekhein.",
     urdu: "سات بڑی اقسام میں ہمارے صنعتی کیمیکلز دیکھیں۔",
   },
+  "categories.explore": { en: "Explore Category", romanUrdu: "Category Dekhein", urdu: "قسم دیکھیں" },
 
   // ─── Best Sellers ───
   "bestsellers.title": { en: "Best-Selling Products", romanUrdu: "Sab Se Zyada Bikne Wale Products", urdu: "سب سے زیادہ بکنے والی مصنوعات" },
+  "bestsellers.subtitle": {
+    en: "High demand industrial chemical items",
+    romanUrdu: "Badi Maang Wale Industrial Chemical Items",
+    urdu: "زیادہ مانگ والے صنعتی کیمیکل کے آئٹمز",
+  },
 
   // ─── Industries ───
   "industries.title": { en: "Industries We Serve", romanUrdu: "Jin Industries Ki Hum Khidmat Karte Hain", urdu: "جن صنعتوں کی ہم خدمت کرتے ہیں" },
@@ -146,6 +171,22 @@ export const translations: Record<string, TranslationRecord> = {
   "products.bestSeller": { en: "Best Seller", romanUrdu: "Best Seller", urdu: "سب سے زیادہ بکنے والا" },
   "products.allCategories": { en: "All Categories", romanUrdu: "Tamam Categories", urdu: "تمام اقسام" },
   "products.allIndustries": { en: "All Industries", romanUrdu: "Tamam Industries", urdu: "تمام صنعتیں" },
+  "products.showing": { en: "Showing", romanUrdu: "Dikhaye ja rahe hain", urdu: "دکھائے جا رہے ہیں" },
+  "products.items": { en: "items", romanUrdu: "items", urdu: "آئٹمز" },
+  "products.clearFilters": { en: "Clear All Filters", romanUrdu: "Tamam Filters Khatam Karein", urdu: "تمام فلٹرز ختم کریں" },
+  "products.tableName": { en: "Chemical Name", romanUrdu: "Chemical Ka Naam", urdu: "کیمیکل کا نام" },
+  "products.tableCategory": { en: "Category", romanUrdu: "Category", urdu: "قسم" },
+  "products.tablePackaging": { en: "Packaging Spec", romanUrdu: "Packaging Spec", urdu: "پیکجنگ اسپیک" },
+  "products.tableGrade": { en: "Grade / Purity", romanUrdu: "Grade / Purity", urdu: "گریڈ / پیوریٹی" },
+  "products.tableAction": { en: "Action", romanUrdu: "Action", urdu: "کارروائی" },
+  "products.noMatching": { en: "No matching chemical items", romanUrdu: "Koi matching chemical item nahi mila", urdu: "کوئی ملتا جلتا کیمیکل آئٹم نہیں ملا" },
+  "products.noMatchingSub": { en: "We couldn't find any products matching your current filters.", romanUrdu: "Aapke mojooda filters ke mutabiq koi product nahi mila.", urdu: "آپ کے موجودہ فلٹرز کے مطابق کوئی پروڈکٹ نہیں ملا۔" },
+  "products.resetFilters": { en: "Reset Filters", romanUrdu: "Filters Reset Karein", urdu: "فلٹرز ری سیٹ کریں" },
+  "products.packaging": { en: "Packaging", romanUrdu: "Packaging", urdu: "پیکجنگ" },
+  "products.added": { en: "Added", romanUrdu: "Shamil", urdu: "شامل" },
+  "products.quoteBtn": { en: "Quote", romanUrdu: "Quote", urdu: "قیمت" },
+  "products.primaryIndustry": { en: "Primary Industry Applications", romanUrdu: "Badi Industrial Applications", urdu: "بنیادی صنعتی استعمال" },
+  "products.youMayNeed": { en: "You May Also Need", romanUrdu: "Aapko Ye Bhi Chahiye Ho Sakta Hai", urdu: "آپ کو یہ بھی چاہیے ہو سکتا ہے" },
 
   // ─── Quote List ───
   "quote.title": { en: "Quote List", romanUrdu: "Quote List", urdu: "قیمت کی فہرست" },
@@ -161,7 +202,7 @@ export const translations: Record<string, TranslationRecord> = {
   "about.story.text": {
     en: "For over three decades, Al Mobeen Enterprise has been a trusted chemical distributor operating from the heart of Jodia Bazar in Karachi — Pakistan's largest and most established chemical trading market. As a sole proprietorship, we've built our reputation on one principle: reliable sourcing and honest dealing.\n\nWe do not import or manufacture. Instead, we work closely with Pakistan's leading importers and large dealers, sourcing chemicals according to our customers' exact specifications. This focused model lets us offer competitive pricing and consistent availability across a wide product range — from solvents and plasticizers to pigments, resins, and specialty chemicals.\n\nOur customers span seven major industries — Paints & Coatings, Printing Inks, Plastics/PVC, Textile & Dyeing, Leather, Detergents, and General Industrial Manufacturing — and we serve them across all of Pakistan with a primary focus on Karachi.",
     romanUrdu: "Teen dashak se zyada arsa se, Al Mobeen Enterprise Jodia Bazar, Karachi — Pakistan ki sabse badi aur qaim shuda chemical trading market — ke dil mein ek bharosemand chemical distributor raha hai. Ek sole proprietorship ke taur par, humne apni shohrat ek usool par banai hai: bharosemand sourcing aur eimandari se muamla.\n\nHum import ya manufacture nahi karte. Iske bajaaye, hum Pakistan ke leading importers aur bade dealers ke saath mil kar kaam karte hain, apne customers ki exact zaroorat ke mutabiq chemicals source karte hain.",
-    urdu: "تین دہائیوں سے زیادہ عرصے سے، المبین انٹرپرائز جوڈیا بازار، کراچی — پاکستان کی سب سے بڑی اور قائم شدہ کیمیکل ٹریڈنگ مارکیٹ — کے دل میں ایک بھروسہ مند کیمیکل ڈسٹری بیوٹر رہا ہے۔",
+    urdu: "تین دہائیوں سے زیادہ عرصے سے، المبین انٹرپرائز جوڈیا بازار، کراچی — پاکستان کی سب سے بڑی اور قائم شدہ کیمیکل ٹریڈنگ مارکیٹ — کے دل میں ایک بھروسہ مند کیمیکل ڈسٹری بیوٹر رہا ہے۔ ایک سول پروپرائٹر شپ کے طور پر، ہم نے اپنی شہرت ایک اصول پر بنائی ہے: بھروسہ مند سورسنگ اور ایمانداری سے معاملہ۔",
   },
   "about.timeline.founded": { en: "Founded", romanUrdu: "Qaim Hua", urdu: "قائم ہوا" },
   "about.timeline.growth": { en: "30 Years of Growth", romanUrdu: "30 Saal Ki Tarakki", urdu: "30 سال کی ترقی" },

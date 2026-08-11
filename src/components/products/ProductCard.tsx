@@ -56,7 +56,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <CategoryIcon category={product.category} size={42} />
           <div className="text-right">
             <span className="text-[10px] font-extrabold uppercase block text-neutral">
-              Packaging
+              {t("products.packaging")}
             </span>
             <span className="text-xs font-black block text-ink">
               {product.packaging}
@@ -117,7 +117,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>Added</span>
+              <span>{t("products.added")}</span>
             </>
           ) : (
             <>
@@ -125,7 +125,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg>
-              <span>Quote</span>
+              <span>{t("products.quoteBtn")}</span>
             </>
           )}
         </Button>

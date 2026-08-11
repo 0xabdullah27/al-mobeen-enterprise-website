@@ -6,12 +6,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { products } from "@/data/products";
 import { useQuote } from "@/components/QuoteProvider";
 import { useToast } from "@/components/ui/Toast";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Hero3DCard() {
   const mountRef = useRef<HTMLDivElement>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const { addItem, isInQuote } = useQuote();
   const { showToast } = useToast();
+  const { t } = useLanguage();
 
   const { scrollY } = useScroll();
   const rotateYScroll = useTransform(scrollY, [0, 600], [0, Math.PI * 2]);
@@ -132,13 +134,13 @@ export default function Hero3DCard() {
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pb-6 border-b border-border">
         <div>
           <span className="text-[10px] font-extrabold uppercase tracking-wider text-accent block mb-1">
-            Bulk Spec Visualizer
+            {t("visualizer.badge")}
           </span>
           <h3 className="text-lg font-extrabold text-ink">
-            Industrial Drum & Spec Finder
+            {t("visualizer.title")}
           </h3>
           <p className="text-xs text-neutral">
-            Jodia Trading Desk Stock
+            {t("visualizer.sub")}
           </p>
         </div>
 
@@ -153,7 +155,7 @@ export default function Hero3DCard() {
       <div className="relative mb-4">
         <input
           type="text"
-          placeholder="Search e.g. DOP, Titanium, Xylene, MEG..."
+          placeholder={t("visualizer.placeholder")}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full pl-9 pr-4 py-2.5 text-xs rounded-xl border border-border bg-base text-ink focus:outline-none focus:ring-2 focus:ring-accent/30 font-medium"
@@ -195,7 +197,7 @@ export default function Hero3DCard() {
                     : "bg-accent text-inverse-ink hover:bg-accent-hover"
                 }`}
               >
-                {added ? "✓ Added" : "+ Quote"}
+                {added ? t("visualizer.added") : t("visualizer.addQuote")}
               </button>
             </div>
           );

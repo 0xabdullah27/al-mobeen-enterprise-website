@@ -19,7 +19,7 @@ export default function BestSellersMarquee() {
           </p>
         </div>
         <span className="text-xs font-semibold text-neutral hidden sm:inline">
-          High demand industrial chemical items
+          {t("bestsellers.subtitle")}
         </span>
       </div>
 
