@@ -55,7 +55,8 @@ src/
 │   ├── Footer.tsx            # Comprehensive Footer & Links
 │   └── QuoteListDrawer.tsx   # Floating Interactive Quote Basket Drawer
 ├── data/                     # Data Models & Content
-│   ├── products.ts           # 80+ Industrial Chemicals Dataset
+│   ├── products.json         # 80+ Industrial Chemicals Dataset
+│   ├── products.ts           # Product Type & Helpers (reads products.json)
 │   ├── categories.ts         # Chemical Categories & Tints
 │   ├── industries.ts         # Industrial Sectors & Target Applications
 │   └── translations.ts       # Tri-lingual Translations Dictionary (EN/Roman/UR)
